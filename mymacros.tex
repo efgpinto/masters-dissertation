@@ -1,0 +1,38 @@
+%some macro definitions
+
+% format
+\newcommand{\class}[1]{{\normalfont\slshape #1\/}}
+
+% entities
+\newcommand{\Feup}{Faculdade de Engenharia da Universidade do Porto}
+
+\newcommand{\svg}{\class{SVG}}
+\newcommand{\scada}{\class{SCADA}}
+\newcommand{\scadadms}{\class{SCADA/DMS}}
+
+
+% \myfigure{file}{caption}
+\newcommand{\myfigure}[2]{\mycustomfigure{#1}{#2}{width=0.86\textwidth}}
+
+% \mycustomfigure{file}{caption}{params}
+\newcommand{\mycustomfigure}[3]{\begin{figure}[t]
+  \begin{center}
+    \leavevmode
+    \includegraphics[#3]{#1}
+    \caption{#2}
+    \label{fig:#1}
+  \end{center}
+\end{figure}}
+
+% \myfigure{label}{caption}{table spec}{contents}
+\newcommand{\mytable}[4]{\begin{table}[t]
+  \footnotesize
+  \centering
+  \caption{#2}
+  \begin{tabular}{#3}
+    #4
+  \end{tabular}
+  \label{tab:#1}
+\end{table}}
+
+\newcommand{\todo}[1]{\textbf{\color{red}[TODO #1]}}

@@ -1,0 +1,77 @@
+\chapter{Introduction} \label{chap:intro}
+
+\section*{}
+
+%O primeiro capítulo da dissertação deve servir para apresentar o
+%enquadramento e a moti\-va\-ção do trabalho e para identificar e
+%definir os problemas que a dissertação aborda.
+%Deve resumir as metodologias utilizadas no trabalho e termina
+%apresentando um breve resumo de cada um dos capítulos
+%posteriores.
+
+%\begin{quote}
+%  ``Like the Abstract, the Introduction should be written to engage the
+%  interest of the reader. It should also give the reader an idea of
+%  how the dissertation is structured, and in doing so, define the
+%  thread of the contents.''~\citepp[chap.\ Introduction]{kn:Tha01} 
+%\end{quote}
+
+The revolution and advent of technology has been changing the way people interact with each other, forcing the companies to adopt new business strategies, improving life's quality and so forth. In the organizations context, the Information Systems brought a new opportunity for improving and optimizing processes, helping to generate value and profits and making them more competitive~\citep{Gurbaxani1991}.
+
+The health context is one of the most complex and critical, compelling the organizations to support several business processes and interacting with multiple stakeholders from clinicians to laboratory technicians. With such a complex scenario it seems easy to understand the impact that the technology might have, automating processes or sharing information among all the interested parties. However, this complexity obviously raises the risks of failing for projects implementation, either because the products do not meet the requirements, the stakeholders expectations or were built excessively monolithic what preclude future integration and evolution~\citep{Chu2006}.
+
+\section{Background} \label{sec:background}
+
+Despite of the healthcare arena largeness and the inherent difficulties of comprehensive Information Technology (IT) projects, several concepts and platforms started appearing~\citep{Haux2006}. For instance, seems reasonable to say that the patient clinical information should be available to its consumers when needed, whatever the place or time of the occurrence. The Electronic Health Record (EHR) concept is described~\citep{Gunter2005} as the ``longitudinal collection of electronic health information about individual patients and populations''. The main objective is to provide clinical information about a patient where it needs to be consulted, independently of its origin or location, helping to avoid clinical errors or duplication of efforts and resources. It is supposed to be a mechanism for integrating healthcare information for the purpose of improving care quality~\citep{Orszag2008} but obviously, these EHR systems are as complex as the implementations challenges they face.
+
+%Esta secção descreve a área em que o trabalho se insere, podendo
+%referir um eventual projecto de que faz parte e apresentar uma breve
+%descrição da empresa onde o trabalho decorreu.
+\section{Context} \label{sec:context}
+
+The benefits of an EHR seem consensual and undeniable. All around the world, several countries started expensive programmes trying to implement partial or total EHR solutions, some being more successful than others.
+
+The Portuguese health information systems suffer from the same problems~\citep{Deloitte2011} that probably most of the countries: all over the years, the systems were being created essentially to solve local problems. These systems were developed without any kind of concern about interoperability --- designing and building the systems following standards and not precluding future communications and data sharing. The consequence is quite predictable: the multiple existing systems, which have many purposes, use different codification standards and several interfaces to allow communication, do not have the capability to `talk' with each other. Plus, even if they could communicate, they would not be able to understand each other since they do not use the same language to express themselves. As final consequence, there is an huge amount of clinical data that cannot be shared.
+
+In 2010, the Ministry of Health signed a protocol with the Faculty of Engineering of University of Porto (FEUP) establishing a partnership for delivering some recommendations about the design and implementation for the EHR. This dissertation appears under the scope of that protocol.
+
+%Apresenta a motivação e enumera os objectivos do trabalho terminando
+%com um resumo das metodologias para a prossecução dos objectivos.
+\section{Motivation and Objectives} \label{sec:goals}
+
+Clements, Kazman and Klein advocate~\citep{Clements2001} that ``architectures allow or preclude nearly all of the system's quality attributes''. In this sense, when it is pretended to create a system where the quality attributes are critical, the architecture is certainly one of the most relevant means to assure and facilitate them.
+
+The purpose of this dissertation is to build an architecture proposal to the Portuguese EHR. This architecture must allow the integration of the existing multiple Health Information Systems, as well as providing an infrastructure for sharing data. The proposal must promote the interoperability between different healthcare organizations, either by forcing the utilization of international standards and conventions or by establishing well-defined interfaces. The future evolution of the system must also be taken into account when designing the architecture proposal.
+
+Despite the deliverable is an architecture proposal, the final objectives can be pointed out as follows:
+\begin{itemize}
+\item deliver a full architecture proposal, able to offer a complete and integrated vision from the healthcare organization level to the EHR level;
+\item study the impact on the applications architecture describing the possibilities of new services integration;
+\item propose a governance model promoting the long-term management and evolution of the EHR;
+\end{itemize}
+
+The thesis research will be done through a straight collaboration with the Ministry of Health, allowing to work close to the EHR stakeholders.
+
+%TODO: metodologias?
+
+\section{Document Structure} \label{sec:struct}
+
+In the present chapter we described the context, motivation and goals of this dissertation. The document has more 4 chapters.
+
+The Chapter~\ref{chap:inf-sys} starts with a small introduction about the HIS and try to understand what kind of methodologies may be used to facilitate the implementation of such large systems, using Enterprise Architectures. Then, we briefly describe three Architectural Styles.
+
+In the Chapter~\ref{chap:standards} we start describing the implementation of two EHR case studies, in United Kingdom and in Canada. Next, we overview some of the health international standards and finish with a description of the epSOS programme.
+
+The Chapter~\ref{chap:arch-proposal} aims to trace in general lines how will be structured the proposal and which are its main `components' and concerns. Also, it is included the work plan for the next semester.
+
+To conclude, the final Chapter~\ref{chap:concl} allows us to state some final considerations about the future work and which problems might raise up along.
+
+%Para além da introdução, esta dissertação contém mais x capítulos.
+%No capítulo~\ref{chap:sota}, é descrito o estado da arte e são
+%apresentados trabalhos relacionados. 
+%No capítulo~\ref{chap:chap3}, ipsum dolor sit amet, consectetuer
+%adipiscing elit.
+%No capítulo~\ref{chap:chap4} praesent sit amet sem. 
+%No capítulo~\ref{chap:concl}  posuere, ante non tristique
+%consectetuer, dui elit scelerisque augue, eu vehicula nibh nisi ac
+%est. 

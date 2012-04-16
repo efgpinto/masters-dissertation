@@ -1,0 +1,39 @@
+\chapter{Architectural Proposal} \label{chap:arch-proposal}
+
+\section*{}
+
+This dissertation pretends to deliver an Architectural Proposal for the EHR. In that sense, this chapter is a briefly overview about how the work will be structured and the fundamental questions that must be answered in the end of this dissertation project.
+
+\section{General architecture}
+
+At this point, there are three essential questions that resume the work to be done:
+\begin{itemize}
+\item How to align the technology and business visions, allowing future evolution of the system?
+\item Which data will be stored where?
+\item Which standards will be used to format data and exchange information?
+\end{itemize}
+
+The problem of align the technology and business visions is one the greatest problems when talking about ultra-large scale software projects, as it was already referred in Section~\ref{sec:ea-frams}. The solution will probably come from the intersection of recommendations from the several Enterprise Architecture frameworks referred.
+
+As the EHR is supposed to be a long-term project, the necessity for evolution will be a constant through the years. In that sense, it is critical that the architecture proposal allow and promote that evolution. Some approaches that might be helpful were described in Section~\ref{sec:arch-styles}.
+
+The amount of information that is produced and stored, every day, by the healthcare organizations is enormous. This information can be classified by importance level what can give us an idea about which data is the most relevant and must be always available. Thus, the relevant information storing is a nuclear issue, as it can vary from a totally centrally-based approach to a complete distributed one.
+
+To conclude, the way information is shared around the `players' includes the definition of: how to transmit the data, how to interpret the data and how to store the data. Basically, the problem starts with putting the systems to share information. Then, it is also required that the information transmitted can be understandable by the receiver. Finally, the way the information is stored, either centrally or in each institution is critical to facilitate all the integration.
+
+
+\section{Work plan}
+
+A work plan was created to guide the dissertation research work and is expressed in Figure~\ref{fig:workplan}.
+The plan was divided in several tasks:
+\begin{itemize}
+\item International standards --- the first weeks will be necessary to study some of the standards internationally adopted, helping to understand better the EHR needs in terms of information standards;
+\item Service-Oriented Architectures --- research about the implementation of this type of services in the health context and its applicability to the EHR;
+\item Governance Model --- some time dedicated to study how it will be possible to manage all the system, maintaining the data integrity while allowing evolution;
+\item Applications Architecture --- the requirements that allow new systems to be integrated and share information with the existing ones;
+\item Architecture Proposal --- the proposal will be created over the time, along with the research;
+\item Evaluate the Proposal --- evaluation with the study and application of some well-known methods;
+\item Write and review thesis report --- finally, some time reserved to writing and reviewing the thesis document.
+\end{itemize}
+
+\mycustomfigure{workplan}{Dissertation work plan}{width=1.0\textwidth}

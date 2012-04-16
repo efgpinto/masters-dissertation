@@ -1,0 +1,26 @@
+<identifiedPerson>
+   <!-- Primary id as used/known by this registry -->
+   <id extension="000197245" root="2.16.840.1.113883.19.3"/>
+   <addr use="H">
+     <streetName>Randomroad</streetName>
+     <houseNumber>25a</houseNumber>
+     <postalCode>1200</postalCode>
+     <city>Anytown</city>
+   </addr>
+   <telecom use="H" value="tel:555 3542557"/>
+   <statusCode code="active"/>
+   <identifiedPerson>
+     <name use="L">
+       <given>Patricia</given>
+       <family>Patient</family>
+     </name>
+     <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+     <birthTime value="19750103"/>
+     <maritalStatusCode code="F" codeSystem="2.16.840.1.113883.5.2"/>
+   </identifiedPerson>
+   <assigningOrganization>
+       <!-- Scoper, the registering organisation -->
+       <id extension="1002777" root="2.16.840.1.113883.19.200"/>
+       <contactParty nullFlavor="UNK"/>
+   </assigningOrganization>
+</identifiedPerson>
