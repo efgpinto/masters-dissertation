@@ -25,14 +25,23 @@
 \end{figure}}
 
 % \myfigure{label}{caption}{table spec}{contents}
-\newcommand{\mytable}[4]{\begin{table}[t]
+\newcommand{\mytable}[3]{\begin{table}[t]
   \footnotesize
   \centering
   \caption{#2}
-  \begin{tabular}{#3}
-    #4
+  \begin{tabular}{p{2cm}|p{12cm}}
+    #3
   \end{tabular}
   \label{tab:#1}
 \end{table}}
+
+\newcommand{\myprinciple}[7]{
+  \mytable{#1}{#2}{
+  \hline Name & #3 \\ 
+  \hline Statement & #4 \\ 
+  \hline Rationale & #5 \\
+  \hline Implications & #6  \\ 
+  \hline 
+}} 
 
 \newcommand{\todo}[1]{\textbf{\color{red}[TODO #1]}}
