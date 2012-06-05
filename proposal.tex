@@ -1,0 +1,97 @@
+\chapter{Architecture Proposal} \label{chap:arch-proposal}
+
+\section*{}
+
+\section{Principles}
+
+\subsection{Enterprise principles}
+
+\myprinciple{priciple1}{"Quick-wins strategy" principle}
+{Quick-wins strategy}
+{The difficult times that Portugal are passing through imply the search for solutions with short-term results and value. In this sense, there is an emergent need for balancing the best solution and the reasonable solution with short-term benefits.}
+{The project's scope and complexity obliges the definition and search for solutions that might motivate all the stakeholders. Since there are an huge number of interested parties, the quick-wins are a big help in order to raise interest and contributions to the project. On the other hand, the definition of short-term milestones help to keep control of the progress.}
+{}
+
+
+\myprinciple{principle2}{"Data normalization" principle}
+{Data normalization}
+{The normalization path seems inevitable. Accordingly, this proposal should privilege and encourage the adoption and evolution of the systems, instead of creating several solutions according with each existing system.}
+{The advantages of normalizing data, processes or any other kind of action are recognized and consensual. In fact, with the systems growing up exponentially in number and complexity, the need for sharing data has increased as well, creating a context where a system should be able to communicate and exchange data with thousands of others. The definition of norms for representing the data allows an healthcare institution to much easily receive and interpret data from one other.}
+{The change of information systems that are not prepared to be expanded might be very slow and complex, in most cases. Also, there is a need for changing the processes, unifying them, and that change might be more difficult than previous one.}
+{Definition of national unified models for documents like discharge letters, analysis and so on.} 
+
+
+\subsection{IT principles}
+
+\myprinciple{principle3}{"Adoption of international standards" principle} %caption
+{Adoption of international standards} %Name
+{There are numerous health standards ready to be used and facilitate sharing and exchanging of clinical information. The new services should adopt a standard and the old ones should be converted.} %Statement
+{Most of the times, the standards can not be directly applied to the Portuguese reality. That is, the national systems since that they are using national codifications which simply can not be substituted. In that case, the solution might be to create ways of translate between the two codifications. } %Rationale
+{Definition of conversion tables or services between the national and international codifications.} %Implications
+
+\subsection{Architectural principles}
+
+\myprinciple{principle4}{"Flexible solutions" principle}
+{Flexible solutions}
+{With such a long process, there are several decisions taken already in the process of implementation. In that situations, the decisions should consider the solutions that will allow the system to evolute easily.} %statement
+{Most of times, the search for flexible solutions have high costs in terms of implementation schedule. Certainly, there is a need for balancing the level of flexibility that the solution might search for. } %rationale
+{} %implications
+
+\myprinciple{principle5}{"Fit without precluding" principle}
+{Fit without precluding}
+{The strategy is not to replace the existing systems but to fit them trying not to compromise future requirements and developments.}
+{Most of the systems in use were created several years ago. That means that every healthcare professional is accustomed to the existing systems and that a sudden and unprepared change to the way they have to work and do their job might sentence the project's failure.}
+{There will be necessary to understand which systems are fundamental to the business goals, meaning that might be some systems which does not worth to integrate with, either because they are too old and will be deprecated soon or because they simply have not enough audience.}
+
+
+\section{Structural Concepts}
+
+An Electronic Health Record can be defined as the set of some essential healthcare services. In this section, we will describe the services which we consider the most important ones.
+
+\subsection{Patient Summary}
+
+The Patient Summary (PS)~\citep{EPSOS_PS} is a set of information that allows an healthcare professional to have a quick and easy overview over a patient, used in the epSOS project. A similar concept is used in the England's National Health Service, called Summary Care Records. Although the name may vary, the concept is practically the same and stands as an electronic record that will give healthcare staff faster, easier access to essential information about a patient, to help provide safe treatment in an emergency, generally~\citep{Service2010}.
+
+The epSOS Patient Summary contains the following data:
+\begin{itemize}
+\item Demographic information (e.g. name, birth date, gender);
+\item Most important clinical patient data (e.g. allergies, current medical problems, or major surgical procedures during the last six months);
+\item Current medication including all prescribed medicines;
+\item Meta-data about the Patient Summary itself (e.g. when and by whom was created or modified).
+\end{itemize}
+
+The clinical data included may vary a little bit but, in general terms, is very similar to the set stated above.
+
+\subsubsection{The benefits}
+
+The benefits of the existence of a Patient Summary are not very consensual. In general terms, the advantages announced are:
+\begin{itemize}
+\item Improved information flow between patient and staff;
+\item Better and more accurate treatment in emergency situations;
+\item Quicker and easier access to essential information;
+\item Easier to allow the patient to check its own PS.
+\end{itemize}
+
+In fact, it is possible to point out two completely different case studies, in terms of acceptance and success: England and Scotland. Several articles had been written advocating that 
+
+
+
+NHS staff will be able to find medical information about you much more quickly.
+
+• Staff treating you will have a more complete picture of your health and your medical background. For example, we will be able to see quickly if you have any long-term medical conditions, or if you have recently had an operation.
+• This information will be available even when you are not at home – for example, if you are in another part of Scotland.
+• It will be easier for you to look at your own health records, for example, if you want to check that they are correct.
+
+
+
+\subsection{Personal Health Record}
+
+\subsection{Professional Portal}
+\subsection{epSOS integration}
+
+\section{Proposed Architecture}
+\subsection{Information Architecture}
+\subsection{Application Architecture}
+\subsection{Technology Architecture}
+
+
