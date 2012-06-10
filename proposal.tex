@@ -62,7 +62,7 @@ The epSOS Patient Summary contains the following data:
 
 The clinical data included may vary a little bit but, in general terms, is very similar to the set stated above.
 
-\subsubsection{The benefits}
+\subsubsection{Discussion}
 
 The benefits of the existence of a Patient Summary are not very consensual. In general terms, the advantages announced are:
 \begin{itemize}
@@ -72,26 +72,65 @@ The benefits of the existence of a Patient Summary are not very consensual. In g
 \item Easier to allow the patient to check its own PS.
 \end{itemize}
 
-In fact, it is possible to point out two completely different case studies, in terms of acceptance and success: England and Scotland. Several articles had been written advocating that 
+In fact, it is possible to point out two completely different case studies, in terms of acceptance and success: England and Scotland. 
 
+In England, several articles~\citep{Anderson2010, Coiera2011, Greenhalgh2010} had been written expressing concerns and doubts about the concept, arguing that the Summary Care Record (in England) should be abandoned "for reasons of safety, functionality, clinical autonomy, patient privacy, and human rights"~\citep{Anderson2010}, stated Ross Anderson. Anderson justifies his critical saying that the data coming from multiple sources, for which there is no responsible, will create a poor and dangerously incomplete summary. Moreover, a final report~\citep{Stramer2010} of an independent evaluation of the Summary Care Record programme concluded that there is limited evidence that the SCR programme had so far achieved the benefits set out. Despite of stating an evidence of improved quality in some consultations, particularly those which involved medication decisions and a probably reduce of rare but important medication errors, the commission was not able neither to find evidence of reduction in onward referral nor to evaluate the impact on the satisfaction of patients. Although, the report defends that the SCR was particularly useful in patients unable to communicate or advocate for themselves. On the other hand, Mark Walport advocates~\citep{Walport2010} that "good information technology has the capacity to be transformational" insisting on the idea of quicker access to more reliable information that should help the treatment.
 
-
-NHS staff will be able to find medical information about you much more quickly.
-
-• Staff treating you will have a more complete picture of your health and your medical background. For example, we will be able to see quickly if you have any long-term medical conditions, or if you have recently had an operation.
-• This information will be available even when you are not at home – for example, if you are in another part of Scotland.
-• It will be easier for you to look at your own health records, for example, if you want to check that they are correct.
-
-
+The Scottish case appears to gather more consensus and positive feedback. A study of Gartner Industry Research stated~\citep{Research2007} that the Emergency Care Summary (ECS), how it is called in Scotland, is a success because it met a specific business need. Also, it advocates that the clinician buy-in was achieved by involving the clinicians in the definition of ECS data and designing the security and access protocol for it as well as there was "training out-of-hours staff to use ECS appropriately" which was identified as a critical factor too. Another study~\citep{Jones2008} on the ECS reported an estimated volume of 5.1 million patient records created from the GP practices and 1.3 million of accesses to them, in 2008.
 
 \subsection{Personal Health Record}
+
+A Personal Health Record is a system whereby individuals can "access, manage and share their health information, and that of others for whom they are authorized, in a private, secure, and confidential environment"~\citep{Health2003}. As it is reported by some articles~\citep{Tang2006,Tang2009}, the approach of the system might differ from being a totally isolated one till being integrated with the national healthcare system. Also, there is a lot of studies~\cite{Tang2009,Pagliari2007,Detmer2008, Fricton2008} about the benefits that those systems can bring:
+\begin{itemize}
+\item quality, completeness, depth, and accessibility of health information provided by patients;
+\item self management support - e.g. care plans, graphing of symptoms, passive biofeedback, tailored instructive or motivational feedback, decision aids, or reminders;
+\item communication between patients and providers;
+\item access to patients' health knowledge;
+\item portability of clinical records and other personal health information;
+\item links to static or interactive information about illness, treatments, or self care;
+\item capture of symptom or health behaviour data by self report or objective monitoring through electronic devices.
+\end{itemize}
+
+This kind of system represents a new paradigm in which the patients have the central power about the information about himself~\citep{Ball2007}. Also, some new visions appeared, extracting the maximum value of the information inserted by the individual. For instance, how that information can be used in a mobile context~\citep{Brief2010}.
+
 
 \subsection{Professional Portal}
 \subsection{epSOS integration}
 
-\section{Proposed Architecture}
-\subsection{Information Architecture}
-\subsection{Application Architecture}
-\subsection{Technology Architecture}
+\section{Information Architecture}
+\subsection{Baseline}
+\subsection{Ongoing}
+
+The changes in the Information Architecture has not been very significant yet. However, it is important to notice the introduction of the Patient Portal (the PHR system) that centralizes all the patients' information across the country, in the same system.
+
+In a parallel work, there was the need of defining the new data model for the RCU2 (the Patient Summary system). In a team effort with Dr. Raquel Deveza\footnote{Dr. Raquel Deveza - Coordinator of the RCU2 project}, Eng. Miguel Oliveira\footnote{Eng. Miguel Oliveira - FEUP team member}, Dr. José Castanheira\footnote{Dr. José Castanheira - Coordinator of Information Systems Unit of ARSN} it has been defined a database model that would be able to store the RCU2 information. The model can be found at Appendix~\ref{ap1:rcu2_db}.
+
+The model was conceived with two main concerns:
+\begin{itemize}
+\item Approximate the data model to the existing representation in the healthcare primary care units in order to facilitate the data transfer;
+\item Build a RCU2 model based on the epSOS Patient Summary information recommendations and requirements in order to facilitate the data export and dispatch to other countries by epSOS platform.
+\end{itemize}
+
+The referenced model will be tried out at the primary healthcare institutions.
+
+
+
+\subsection{Future}
+
+As regards to the RCU2, the natural tendency is to group the several institutions by regions and evolving trying to have as few instances as possible. This policy of centralization has great advantages in terms of ease of troubleshooting, improvements, maintenance, etc. 
+
+Even with respect to the RCU2, the possibility of migrating the data model to a standard like HL7 RIM or so must not be discarded. However, it seems impossible in the medium-term future to completely apply a standard to it. There are several reasons to that, but the most prominent one is the effort that it would require to change the existing systems in order to exchange data like that.
+
+\section{Application Architecture}
+\subsection{Baseline}
+\subsection{Ongoing}
+\subsection{Future}
+
+
+\section{Technology Architecture}
+\subsection{Baseline}
+\subsection{Ongoing}
+\subsection{Future}
+
 
 
