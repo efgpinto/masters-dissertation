@@ -24,6 +24,16 @@
   \end{center}
 \end{figure}}
 
+% \mycustomfigure{file}{caption}{params}
+\newcommand{\myoriginalfigure}[2]{\begin{figure}[t]
+  \begin{center}
+    \leavevmode
+    \includegraphics{#1}
+    \caption{#2}
+    \label{fig:#1}
+  \end{center}
+\end{figure}}
+
 % \myfigure{label}{caption}{table spec}{contents}
 \newcommand{\mytable}[4]{\begin{table}[t]
   \footnotesize

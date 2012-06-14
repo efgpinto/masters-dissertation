@@ -73,7 +73,7 @@ With HL7 v3, the messages are no longer plain text but XML files (as we can see 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.86\textwidth]{hl7v3example}
-\caption[Example of an HL7 v2 acknowledgement message]{Example of an HL7 v3 message~\citep{Spronk2007}}
+\caption[Example of an HL7 v3 message]{Example of an HL7 v3 message~\citep{Spronk2007}}
 \label{fig:hl7v3example}
 \end{figure}
 
@@ -261,7 +261,7 @@ The EHR Blueprint has multiple components with certain characteristics. Although
 \end{itemize}
 
 
-\subsection{National Health Service Connecting for Health}
+\subsection{England National Health Service}
 
 The National Health Service (NHS) Connecting for Health is part of the UK Department of Health. This organization was created on 1 April 2005 as the replacement for an older one (NHS Information Authority). It has the responsibility of managing and implementing the NHS National Programme for IT (NPfIT). The NPfIT was an initiative to upgrade the NHS to a centrally-mandated electronic health record  for patients, connecting hundreds of hospitals and thousands of healthcare professionals and providing them relevant patient data by secure and certified means.
 
@@ -316,95 +316,3 @@ The NPfIT started in October 2002 and since then it always been the target of so
 
 The next years were very troubled as long as several reports raising doubts about the feasibility of the project were made public ~\citep{Powell2004,Coiera2007,Brennan2007,Clegg2007,Brennan2009}. One of those, by the Public Accounts Committee, stated in 2009 that the risks for the programme deployment were ``as serious as ever'', bringing up serious uncertainty about the capacity of the systems to meet expectations of clinical staff. \footnote{Details: \url{http://news.bbc.co.uk/2/hi/health/7850619.stm}} The over-and-over delays to deliver the fundamental services and the overrun of the programme's cost started to being unsupportable. In September 2011, the NPfIT has been dismantled following the conclusions of a new review by the Cabinet Office's Major Projects Authority (MPA)~\citep{OfHealth}.
 
-
-
-
-
-
-
-
-\section{European Patients - Smart open Services (epSOS)} \label{sec:epsos}
-
-The epSOS (European Patients - Smart open Services) is the main European electronic Health (eHealth) project created by European Commission and the partners. The main objective is to improve the health assistance to citizens who are abroad their own country. It aims to do so by implementing an interoperability platform, allowing different countries to exchange vital information. In that context, one health professional could access patient data from another country improving and précising the medical treatment~\citep{EpSOS}.
-
-\subsection{Services and Standards}
-
-The epSOS is based on a Services-oriented Architecture. It states that all services are passive, implemented with traditional Web Services with their interfaces based on the Web Service Description Language [W3C WSDL 1.1]. When we say that the services are passive, it means that every transaction must be initiated by the consumer of the information.
-The key element of epSOS is the National Contact Point (NCP) and it stands as the only peer of contact for one determined country. In this sense, an NCP can serve both as a content provider when the request is made from other countries or as a gateway for an information request from that country, conveying that request to the target one.
-
-The NCP is based on a set of Common Components and when connecting those components to the national infrastructure it is possible to offer the following end-user services: Consent Service, Patient and Order Services, eDispensation Service, Auditing Service.
-
-\subsubsection{Consent Service}
-epSOS states that the patient must consent and allow the sharing of his information between peers of the epSOS network. This consent is realized through the IHE Basic Patient Privacy Consents (BPPC) profile\footnote{Details: \url{http://wiki.ihe.net/index.php?title=Basic_Patient_Privacy_Consents}} and the patient's consent is given in the origin country.
-
-\subsubsection{Patient and Order Services}
-The Patient and Order Services are used to retrieve medical information when abroad of the patient's home country. The medical data is returned in the epSOS common format and is realized by the IHE Profile XCA\footnote{Details: \url{http://wiki.ihe.net/index.php?title=Cross-Community_Access}} Cross Gateway Query and Cross Gateway Retrieve. These documents are transmitted by web services exchanges and are complaints with the HL7 CDA Release 2.0 standard (see \ref{sec:hl7-cda}).
-
-There are two type of documents to be exchanged: the `ePrescrition' and the `Patient Summary', both using epSOS specific CDA Level 1 and Level 3, respectively.
-
-\subsubsection{eDispensation Service}
-
-The eDispensation Service is required whenever it is necessary to update some medical data with some new information. In this context, one `eDispensation' document is dispatched from the actual country to the patient's home country, being formatted with HL7 CDA Level 3.
-
-\subsubsection{Auditing Services}
-
-The Auditing Services aim to guarantee that all that sensible information is only accessible by those who have that right. Thus, it defines some rules about how to achieve Auditing and Authentication using the IHE Profile Audit Trail and Node Authentication\footnote{Details: \url{http://wiki.ihe.net/index.php?title=Audit_Trail_and_Node_Authentication}}. 
-
-\subsection{Security Aspects}
-In terms of security, epSOS states some basic non-functional security requirements in order to guarantee that all transactions and data are reliable. Thus, epSOS must ensure: Identification, Authentication, Access Control, Non-repudiation, Data confidentiality, Data availability and Logging activities that impact security. Beyond these generic requirements, epSOS establishes some specific security requirements to be used in each country, dividing those into three levels:
-\begin{itemize}
-\item First level --- general epSOS as a whole (16 requirements);
-\item Second level --- general NCP (34 requirements);
-\item Third level --- national information infrastructure (9 requirements).
-\end{itemize}
-
-\subsection{Identification and Authentication}
-\subsection{Semantic Issues}
-epSOS is obviously an huge and complex project, presenting several challenges to manage and resolve. We know that each country has its own policy, classification tables, ontologies and so on. So, one of the most interesting challenges is how to handle this diversity, finding a common language which enables the communication and transcription of several local classifications and taxonomies, not to mention the country language itself. In order to address this problem, epSOS defines a set of semantic services which we describe next. 
-
-\subsubsection{CDA's PPC in epSOS}
-The CDA's PPC (Patient Care Coordination\footnote{Details: \url{http://wiki.ihe.net/index.php?title=Patient_Care_Coordination}}) was integrated in epSOS, creating a significant amount of data elements.
-
-\subsubsection{epSOS Master Value Sets Catalogue}
-The epSOS Master Value Sets Catalogue (MVC) contains all value sets used within epSOS system and CDA framework. The value sets were built based on several well-known code systems, like SNOMED CT, ICD-9, ICD-10, LOINC, ATC, HL7 and so forth. The epSOS MVC is distributed as an Excel file.
-
-\subsubsection{epSOS Master Translation/Transcoding Catalogue}
-The epSOS Master Translation/Transcoding Catalogue (MTC) is based on the epSOS MVC. It is made to fit the specific needs of a country and it is managed and updated its representatives. It is also provided as an Excel file.
-
-\subsubsection{epSOS Ontology}
-The epSOS Ontology aims to unify different terminologies that might be used in the future, providing a linguistic reference of the terms in the epSOS value sets.
-
-
-
-\subsection{System Architecture}
-
-epSOS architecture (described in Figure~\ref{fig:epsos-architecture}) was built with the objective of being enough flexible to allow integration with all kind of services existing inside the boundaries of each member state. The Figure~\ref{fig:epsos-architecture} presents the peer-to-peer connection between two countries. Also, it is possible to understand which components stay under the member state responsibility.
-
-We will overview the main functions of each component in the next subsections, following a top-down approach.
-
-\begin{figure}[t]
-\includegraphics[width=1.0\textwidth]{basic-architecture}
-\caption[Basic Architecture of epSOS]{Basic Architecture of epSOS~\citep{EpSOS}}
-\label{fig:epsos-architecture}
-\end{figure}
-
-\subsubsection{epSOS Interface}
-The epSOS Interface is one of the common components, representing the higher layer of the system. This component might assume one of two roles: Income Protocol Terminator (IPT) when acting as NCP-A or Outbound Protocol Terminator (OPT) when acting as NCP-B.
-
-When Member State B (the consumer of some required information) dispatches a request, the OPT transforms the objects into SOAP requests at the same time that signs and certifies that request and send it to Member State A (the target NCP). At this point, the request arrives at the ICP of NCP-A. The ICP verifies the authenticity of the message and, if reliable, transcode the SOAP request into objects and convey them to a lower main component called Workflow Manager. On the other side, the NCP-B waits a response and when it arrives, it does exactly the same, returning the information to the its respective Workflow Manager. The Workflow Manager is one of the core components and will be exposed later.
-
-\subsubsection{Core elements}
-The core elements serve as the business layer of the system. These are the components which are considered core elements:
-
-\begin{itemize}
-\item \textbf{Workflow Manager} --- it is the entry point for the business layer of NCP, working like an orchestrator and being called both by IPT and the National Connector. The Workflow Manager is the controller of all the operations process, being able to call other services available by other components interfaces, usually returning that information to the National Connector to the OPT;
-\item \textbf{Security Manager} --- it is the responsible for certifying and validating documents;
-\item \textbf{Transformation Manager} --- it works as a data translator from the local language to the epSOS Reference Terminology and vice-versa;
-\item \textbf{Terminology Services Access Manager} --- called by Transformation Manager. It is responsible for translating a local concept into a epSOS coded concept one, using the Terminology Repository, which represents the epSOS Reference Terminology, and is managed and updated by the country;
-\item \textbf{Audit Trail Writer} --- it is the responsible for creating an event log of every transaction and sending it to the Audit Repository. Although, the audits are limited in terms of information.
-\item \textbf{Audit Repository} --- it is the responsible element for storing the logs produced above. The logs are only accessible to the national infrastructure. Thus, these audit interfaces might be defined taking into account the national specific needs;
-\item \textbf{Routing Manager} --- it stands as the pointer to the other countries, providing the routes to connect them. the routing tables are XML documents that might be stored locally or be fetched from a central repository either. 
-\end{itemize}
-
-\subsubsection{The National Interface and Connector}
-The National Interface represents the connection between the Workflow Manager and the National Connector. The National Connector is a collection of adapters that provide access and make use of the internal nation services, using the local protocols and formats. As it is the link for the national information systems, it can also invoke the Workflow Manager through the National Interface.
