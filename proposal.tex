@@ -4,58 +4,79 @@
 
 The objective of this section is to explain and state some suggestions about what is possible to do in the next two or three years, in order to achieve some kind of interoperability and sharing, with the aim of improving the healthcare services in Portugal. In this sense, the goal is not to predict the future about the health information systems or to propose intangible milestones but to point out some strategies that might help to create value in the mid-term future without precluding future requirements and evolutions.
 
-This chapter is meant to explain the progresses that were made since this dissertation work was initiated by February. The work done in a close cooperation with the Portuguese Commission for Clinical Informatics in terms of researching and discussing the best options to take. It will start explaining the work methodology between all the team, advancing then into the explanation of what was found to be more or less relevant. Finally, we explain for each project what were the contributions and what might be done in the future to help the Portuguese EHR to grow healthy and robust.
+This chapter is meant to explain the progresses that were made since this dissertation work was initiated by February. However, there was a previous work of studying architectures and standards and also understanding the new government's strategy that was done since November. The work done in a close cooperation with the Portuguese Commission for Clinical Informatics in terms of researching and discussing the best options to take. It will start explaining the work methodology between all the team, advancing then into the explanation of what was found to be more or less relevant. Finally, we explain for each project what were the contributions and what might be done in the future to help the Portuguese EHR to grow healthy and robust.
 
 \section{Methodology}
 
-
+The methodology was based on a relation of great cooperation between the team and the entities responsible for implementing the PDS project, namely CIC, ACSS and SPMS. The meetings were in a weekly basis counting more than forty since November. The FEUP team's role was to support the design and implementation process, helping in the process of taking decisions, discussing the multiple options and bringing new solutions to the table.
 
 \section{Strategic Vision}
 
+The CIC opted by a strategy based on several projects and new processes running at the same, instead of one with long study, research phases and long implementations schedules. This agile strategy led to the creation of 4 projects, which has different goals but are strong connected to the creation of an EHR:
+
+\begin{itemize}
+\item Personal Health Records --- website that is supposed to has the functionalities of a normal PHR, letting the patient to introduce clinical information and give consent for it to be accessed by healthcare professionals. The Patient Portal already existed but was added to it a new module called \textit{\textbf{As minhas notas}}; 
+\item epSOS integration --- website to provide the integration with the epSOS project, providing the possibility of send a patient summary abroad or to receive clinical data about a foreign patient. The project was named \textit{\textbf{Portal Internacional}};
+\item Patient Summaries --- platform to support the existence of a single clinical summary for each patient, containing the most important information about him/her. The Portuguese project was called \textbf{\textit{Resumo Clínico Único do Utente (RCU2)}};
+\item Information sharing among institutions --- the \textbf{\textit{Plataforma de Dados de Saúde (PDS)}} with the aim of connect the projects above and providing the access that the professionals need to the referred information.
+\end{itemize}
+
+
+
 \section{Principles}
+
+The goal of defining some principles is to serve as guidelines for the architecture being developed. This concept is used in the TOGAF methodology~\citep{Josey2009, Josey2011}. These principles intent to give a premature vision of what might be the development process and the changes that the institutions will have to face.
+
 %TODO armonizar explicação de acrónimos.. ou footnotes ou entre ()
 
+\subsection{Favour the quick-wins}
 
-\subsection{Enterprise principles}
-
-\myprinciple{priciple1}{"Quick-wins strategy" principle}
-{Quick-wins strategy}
-{The difficult times that Portugal are passing through imply the search for solutions with short-term results and value. In this sense, there is an emergent need for balancing the best solution and the reasonable solution with short-term benefits.}
-{The project's scope and complexity obliges the definition and search for solutions that might motivate all the stakeholders. Since there are an huge number of interested parties, the quick-wins are a big help in order to raise interest and contributions to the project. On the other hand, the definition of short-term milestones help to keep control of the progress.}
-{}
-
-
-\myprinciple{principle2}{"Data normalization" principle}
-{Data normalization}
-{The normalization path seems inevitable. Accordingly, this proposal should privilege and encourage the adoption and evolution of the systems, instead of creating several solutions according with each existing system.}
-{The advantages of normalizing data, processes or any other kind of action are recognized and consensual. In fact, with the systems growing up exponentially in number and complexity, the need for sharing data has increased as well, creating a context where a system should be able to communicate and exchange data with thousands of others. The definition of norms for representing the data allows an healthcare institution to much easily receive and interpret data from one other.}
-{The change of information systems that are not prepared to be expanded might be very slow and complex, in most cases. Also, there is a need for changing the processes, unifying them, and that change might be more difficult than previous one.}
-{Definition of national unified models for documents like discharge letters, analysis and so on.} 
+\subsubsection{Statement}
+The difficult times that Portugal are passing through imply the search for solutions with short-term results and value. In this sense, there is an emergent need for balancing the best solution and the reasonable solution with short-term benefits.
+\subsubsection{Rationale}
+The project's scope and complexity obliges the definition and search for solutions that might motivate all the stakeholders. Since there are an huge number of interested parties, the quick-wins are a big help in order to raise interest and contributions to the project. On the other hand, the definition of short-term milestones help to keep control of the progress. Most of the healthcare institutions are big structures with several difficulties to respond to change in time and the others are not simply not used to do it.
+\subsubsection{Implications}
+This strategy obliges the organizations to gain some flexibility. Also, the search for quick-wins may fare worse then solutions without so much rapid benefits. 
 
 
-\subsection{IT principles}
+\subsection{Normalize the data}
 
-\myprinciple{principle3}{"Adoption of international standards" principle} %caption
-{Adoption of international standards} %Name
-{There are numerous health standards ready to be used and facilitate sharing and exchanging of clinical information. The new services should adopt a standard and the old ones should be converted.} %Statement
-{Most of the times, the standards can not be directly applied to the Portuguese reality. That is, the national systems since that they are using national codifications which simply can not be substituted. In that case, the solution might be to create ways of translate between the two codifications. } %Rationale
-{Definition of conversion tables or services between the national and international codifications.} %Implications
+\subsubsection{Statement}
+The normalization path seems inevitable. Accordingly, this proposal should privilege and encourage the adoption and evolution of the systems, instead of creating several solutions according with each existing system.
+\subsubsection{Rationale}
+The advantages of normalizing data, processes or any other kind of action are recognized and consensual. In fact, with the systems growing up exponentially in number and complexity, the need for sharing data has increased as well, creating a context where a system should be able to communicate and exchange data with thousands of others. The definition of norms for representing the data allows an healthcare institution to much easily receive and interpret data from one other.
+\subsubsection{Implications}
+The change of information systems that are not prepared to be expanded might be very slow and complex, in most cases. Also, there is a need for changing the processes, unifying them, and that change might be more difficult than previous one. Moreover, there will be a necessity for defining national unified models for documents like discharge letters, analysis and so on.
 
-\subsection{Architectural principles}
-\myprinciple{principle4}{"Flexible solutions" principle}
-{Flexible solutions}
-{With such a long process, there are several decisions taken already in the process of implementation. In that situations, the decisions should consider the solutions that will allow the system to evolute easily.} %statement
-{Most of times, the search for flexible solutions have high costs in terms of implementation schedule. Certainly, there is a need for balancing the level of flexibility that the solution might search for. } %rationale
-{} %implications
 
-\myprinciple{principle5}{"Fit without precluding" principle}
-{Fit without precluding}
-{The strategy is not to replace the existing systems but to fit them trying not to compromise future requirements and developments.}
-{Most of the systems in use were created several years ago. That means that every healthcare professional is accustomed to the existing systems and that a sudden and unprepared change to the way they have to work and do their job might sentence the project's failure.}
-{There will be necessary to understand which systems are fundamental to the business goals, meaning that might be some systems which does not worth to integrate with, either because they are too old and will be deprecated soon or because they simply have not enough audience.}
+\subsection{Adopt international standards}
 
-\clearpage
+\subsubsection{Statement}
+There are numerous health standards ready to be used and facilitate sharing and exchanging of clinical information. The new services should adopt a standard and the old ones should be converted.
+\subsubsection{Rationale}
+Most of the times, the standards can not be directly applied to the Portuguese reality. That is, the national systems are using national codifications which simply can not be substituted. In that case, the solution might be to create ways of translate between the two codifications.
+\subsubsection{Implications}
+There will be necessary to define conversion tables or services between the national and international codifications. These kind of work should be supervised and controlled at the Ministry level in order to align all the institutions.
 
+
+\subsection{Search for flexible solutions}
+
+\subsubsection{Statement}
+With such a long process, there are several decisions that have to be made late in the process of implementation. In that situations, the decisions should consider the solutions that will allow the system to evolute easily.
+\subsubsection{Rationale}
+Most of times, the search for flexible solutions have high costs in terms of implementation schedule. Certainly, there is a need for balancing the level of flexibility that the solution might search for. Usually, the better solutions take more time to be designed and adopted. Moreover, flexible solutions are often more complex and heavy than others. In this context, the key is always the capacity for balancing both perspectives.
+\subsubsection{Implications}
+The search for flexible solutions may require more resources and more time to implement the projects.
+
+
+\subsection{Fit without precluding}
+
+\subsubsection{Statement}
+The strategy is not to replace the existing systems but to fit them trying not to compromise future requirements and developments.
+\subsubsection{Rationale}
+Most of the systems in use were created several years ago. That is, every healthcare professional is accustomed to the existing systems and that a sudden and unprepared change to the way they have to work and do their job might sentence the project's failure.
+\subsubsection{Implications}
+There will be necessary to understand which systems are fundamental to the business goals, meaning that might be some systems which does not worth to integrate with, either because they are too old and will be deprecated soon or because they simply have not enough audience.
 
 
 
