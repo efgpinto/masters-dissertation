@@ -15,10 +15,10 @@ The methodology was based on a relation of great cooperation between the team an
 The CIC opted by a strategy based on several projects and new processes running at the same, instead of one with long study, research phases and long implementations schedules. This agile strategy led to the creation of 4 projects, which has different goals but are strong connected to the creation of an EHR:
 
 \begin{itemize}
-\item Personal Health Records --- website that is supposed to has the functionalities of a normal PHR, letting the patient to introduce clinical information and give consent for it to be accessed by healthcare professionals. The Patient Portal already existed but was added to it a new module called \textit{\textbf{As minhas notas}}; 
-\item epSOS integration --- website to provide the integration with the epSOS project, providing the possibility of send a patient summary abroad or to receive clinical data about a foreign patient. The project was named \textit{\textbf{Portal Internacional}};
-\item Patient Summaries --- platform to support the existence of a single clinical summary for each patient, containing the most important information about him/her. The Portuguese project was called \textbf{\textit{Resumo Clínico Único do Utente (RCU2)}};
-\item Information sharing among institutions --- the \textbf{\textit{Plataforma de Dados de Saúde (PDS)}} with the aim of connect the projects above and providing the access that the professionals need to the referred information.
+\item Personal Health Records -- website that is supposed to has the functionalities of a normal PHR, letting the patient to introduce clinical information and give consent for it to be accessed by healthcare professionals. The Patient Portal already existed but was added to it a new module called \textit{\textbf{As minhas notas}}; 
+\item epSOS integration -- website to provide the integration with the epSOS project, providing the possibility of send a patient summary abroad or to receive clinical data about a foreign patient. The project was named \textit{\textbf{Portal Internacional}};
+\item Patient Summaries -- platform to support the existence of a single clinical summary for each patient, containing the most important information about him/her. The Portuguese project was called \textbf{\textit{Resumo Clínico Único do Utente (RCU2)}};
+\item Information sharing among institutions -- the \textbf{\textit{Plataforma de Dados de Saúde (PDS)}} with the aim of connect the projects above and providing the access that the professionals need to the referred information.
 \end{itemize}
 
 
@@ -85,49 +85,49 @@ There will be necessary to understand which systems are fundamental to the busin
 
 \section{The Portuguese Personal Health Record}
 
-\subsection{Ongoing Developments}
+\subsection{Recent developments}
 
-The changes in the Information Architecture has not been very significant yet. However, it is important to notice the introduction of the Patient Portal that centralizes all the patients' information across the country, in the same system.
+It is important to notice the introduction of the Patient Portal that centralizes all the patients' information across the country, in the same system.
 
-\subsubsection{The Patient Portal - My Notes}
 To the existing Patient Portal was added a new section called "My Notes". This section pretends to be an PHR system. For now, the portal allows an individual to input the following information: emergency contacts, health information (height, weight, blood glucose, or blood pressure), lifestyle, health problems, allergies and medications. As stated at the service, the objective is to allow the citizen to have an active role in managing, promoting and improving its health state.
 
 The system also allows the individual to give or withdraw the consent to share the information among the public healthcare institutions.
 
 \subsection{Future Vision}
+This is the kind of system that can be built almost standalone. In fact, it was developed as a new peace of software, despite of the integration with the RNU login services. Actually, in addition to storing personal information and allowing the consent managing, it also allows the patient to access the professionals list who saw his/her notes.
+
+Despite of having some interesting features already, the system still has a large margin to evolve. One of the features that should be improved is the patient consent. The actual consent only has to options:
+\begin{enumerate}
+\item give or not give access to the self-introduced records at the Patient Portal - My Notes by a healthcare professional;
+\item give or not give access to the existing information stored at the several institutions of the Portuguese National Health Service by a healthcare professional.
+\end{enumerate}
+
+Probably it will be necessary to have a more detailed consent, providing more options like, for instance: give consent only in case of an emergency or only to institutions within a determined country region.
+
+In terms of information and new functionalities, there are several examples of what could also be included. The authors believe that the following are good examples:
+\begin{itemize}
+\item important events, dates and hereditary conditions in the family history;
+\item vaccines administrated and vaccines still to be administrated and their dates;
+\item organ donor authorization.
+\end{itemize}
 
 
+Last but not least, the information does not worth anything unless it can be shared and access by the professionals. In that sense, if the collected data is not saved in an appropriate format there will be necessary too much effort to share it. So, it is fundamental to use a standard to store the information as well as to implement the interfaces and services that will allow that exchange.
 
+
+%TODO inserir esquema do PPHR
 
 \section{The Portuguese Patient Summary}
 
-\subsection{Ongoing Developments}
-
-In a parallel work, there was the need of defining the new data model for the RCU2 (the Patient Summary system). In a team effort with Dr. Raquel Deveza\footnote{Dr. Raquel Deveza - Coordinator of the RCU2 project}, Eng. Miguel Oliveira\footnote{Eng. Miguel Oliveira - FEUP team member}, Dr. José Castanheira\footnote{Dr. José Castanheira - Coordinator of Information Systems Unit of ARSN} it has been defined a database model that would be able to store the RCU2 information. The model can be found at Appendix~\ref{ap1:rcu2_db}.
-
-The model was conceived with two main concerns:
-\begin{itemize}
-\item Approximate the data model to the existing representation in the healthcare primary care units in order to facilitate the data transfer;
-\item Build a RCU2 model based on the epSOS Patient Summary information recommendations and requirements in order to facilitate the data export and dispatch to other countries by epSOS platform.
-\end{itemize}
-
-The referenced model will be tried out at the primary healthcare institutions.
-
-
-
-\subsubsection{Research Questions}
+\subsection{Recent developments}
 
 The Portuguese Patient Summary (PS) project which was called the RCU2 - Resumo Clínico Único do Utente (Patient Single Clinical Summary) is certainly the most important component. In fact, as described in Section \ref{sec:pat_sum}, the PS might turn into to the enabler necessary to mobilize the institutions and get them to adopt standards and normalize processes.
 
-The development of the RCU2 raises several questions:
+The development of the RCU2 raised several questions. Those are the issues that are described in the following subsections.
 
-These are the main questions that had to be answered before starting the RCU2 development. Some of them were discussed in the earlier stages, others were responded with temporary solutions.
+\subsubsection{The repository}
 
-
-
-\textbf{Where will be stored the information? Centrally? Distributed?}
-
-Firstly, the question of the RCU2 physic location was a very complicated one. As the clinical information is produced at healthcare institutions, there were some reservations about the possibility of gathering it and centralizing it. In fact, when consulting the CNPD -- Comissão Nacional de Proteção de Dados (National Committee for Data Protection) -- the reservations were confirmed. The CNPD did not allow the creation of a national RCU2 repository and obliged it to be distributed at the primary healthcare institution, where the patient has its family doctor.
+Where to store the information? Firstly, the question of the RCU2 physical location was a very complex one. As the clinical information is produced at healthcare institutions, there were some reservations about the possibility of gathering it and centralizing it. In fact, when consulting the CNPD -- Comissão Nacional de Proteção de Dados (National Committee for Data Protection) -- the reservations were confirmed. The CNPD did not allow the creation of a national RCU2 repository and obliged it to be distributed at the primary healthcare institution, where the patient has its family doctor.
 
 The problem is that the CSP -- Cuidados de Saúde Primários (Primary Healthcare) -- institutions are not equipped with the necessary infrastructure to support and provide the RCU2 service, either because the servers are just to old, not secure enough or the bandwidth is not adequate.
 
@@ -141,9 +141,9 @@ In that way, a possible solution is to store the data at each ACES -- Agrupament
 
 
 
-\textbf{Where does the data come from? Hospitals? Primary healthcare institutions?}
+\subsubsection{The required information}
 
-The question about the information to be present in the RCU2 was another fundamental one. In this case, the work done by the CIC -- Comissão para a Informatização Clínica (Commission for Clinical Informatics) -- in cooperation with the FEUP team, was based on two concerns:
+Which information and where to collect it from? The question about the information to be present in the RCU2 was another fundamental one. In this case, the work done by the CIC -- Comissão para a Informatização Clínica (Commission for Clinical Informatics) -- in cooperation with the FEUP team, was based on two concerns:
 \begin{itemize}
 \item involving the clinicians asking them to identify which information is more crucial and brings more value;
 \item trying to match the RCU2 data with the data required and suggested to the epSOS PS.
@@ -156,23 +156,22 @@ Most of the information selected to be part of RCU2 is present in the CSP units.
 \item using a model defined at national level in order to normalize them.
 \end{enumerate}
 
+%TODO ou usar webgdhs.. explicar melhor
+
+In a parallel work, there was the need of defining the new data model for the RCU2 (the Patient Summary system). In a team effort with Dr. Raquel Deveza\footnote{Dr. Raquel Deveza - Coordinator of the RCU2 project}, Eng. Miguel Oliveira\footnote{Eng. Miguel Oliveira - FEUP team member}, Dr. José Castanheira\footnote{Dr. José Castanheira - Coordinator of Information Systems Unit of ARSN} it has been defined a database model that would be able to store the RCU2 information. The model can be found at Appendix~\ref{ap1:rcu2_db}.
+
+The model was conceived with two main concerns:
+\begin{itemize}
+\item Approximate the data model to the existing representation in the healthcare primary care units in order to facilitate the data transfer;
+\item Build a RCU2 model based on the epSOS Patient Summary information recommendations and requirements in order to facilitate the data export and dispatch to other countries by epSOS platform.
+\end{itemize}
+
+The referenced model will be tried out at the primary healthcare institutions.
 
 
-\textbf{Will it be automatically managed or will exist anyone responsible to manage it? If so, who will be that person?}
+\subsubsection{The synchronization process}
 
-When describing the PS concept (Section \ref{sec:pat_sum}) was possible to recognize the importance of being the doctors to manage the PS in the Scottish case study. In fact, a model completely automated to integrate and validate the information would bring two essential issues:
-\begin{enumerate}
-\item discredit and distrust about the information;
-\item difficulties dealing with conflicting information from different institutions.
-\end{enumerate}
-
-In this sense, it was defined that would be the family doctor to manage the RCU2. That means that each general practitioner is responsible to administer the registries of their patients, allowing them to hide deprecated information and accept or reject proposals for new data. Clearly, this strategy brings new liabilities and charges to the doctors that might have an huge impact in their daily work. In that sense, this approach has to be carefully communicated in order to get sufficient acceptance by the professionals.
-
-
-
-
-\textbf{How often is the data transferred between the healthcare institutions to the RCU2? Is it immediate? Daily? Weekly?}
-
+How often is the data transferred between the healthcare institutions to the RCU2? Is it immediate? Daily? Weekly? Since we have defined which data will constitute the RCU2 and where it comes from, it is necessary to determine on which basis the RCU2 will be updated. That synchronization may occur immediately when the information arrives at the local information system or it may be exchanged with a determined frequency (e.g. daily, weekly, monthly, etc).
 The information has to flow between different institutions. Mainly, it has to be transferred between the hospitals or others CSP institutions to the CSP unit where the RCU2 to that specific patient is stored. The process could be described as it follows (see Fig. \ref{fig:PDSi1-Alta}):
 
 \myfigure{PDSi1-Alta}{The flow of a discharge letter between the hospital and the CSP unit}
@@ -185,26 +184,43 @@ The information has to flow between different institutions. Mainly, it has to be
 \end{itemize}
 
 
+
+\subsubsection{The management process}
+
+Will it be automatically managed or will exist anyone responsible to manage it? If so, who will be that person? When describing the PS concept (Section \ref{sec:pat_sum}) was possible to recognize the importance of being the doctors to manage the PS in the Scottish case study. In fact, a model completely automated to integrate and validate the information would bring two essential issues:
+\begin{enumerate}
+\item discredit and distrust about the information;
+\item difficulties dealing with conflicting information from different institutions.
+\end{enumerate}
+
+In this sense, it was defined that would be the family doctor to manage the RCU2. That means that each general practitioner is responsible to administer the registries of their patients, allowing them to hide deprecated information and accept or reject proposals for new data. Clearly, this strategy brings new liabilities and charges to the doctors that might have an huge impact in their daily work. In that sense, this approach has to be carefully communicated in order to get sufficient acceptance by the professionals.
+
+
+
+
+
+
+
 %TODO \textbf{How will it be accessed and consulted?}
 %The existence of a PS opens several possibilities of utilization in many different situations.
 
 
 \subsection{Future Vision}
 
-\subsubsection{Where to store the data?}
+\subsubsection{The repository}
 
-Regarding the RCU2, the natural tendency is to group the several institutions by regions and evolving trying to have as few instances as possible. This policy of centralization has great advantages in terms of ease of troubleshooting, improvements, maintenance, etc. 
+Regarding the RCU2, the natural tendency is to group the several institutions by regions and trying to have as few instances as possible. This policy of centralization has great advantages in terms of ease of troubleshooting, improvements, maintenance, etc. 
 
 
-\subsubsection{How to store the data?}
+\subsubsection{The information}
 
 The use of a standard to store clinical information is often the first solution to evaluate. Even with respect to the RCU2, the possibility of migrating the data model to a standard like HL7 RIM, must not be discarded. However, it seems impossible in the medium-term future to completely apply a standard to it. There are several reasons to that, but the most prominent one is the effort that it would require to change the existing systems in order to exchange data like that.
 Also, since that the systems are not likely to be substituted in the mid-term future, it is a lot easier to store it in the original format at RCU2. Obviously, when sending that data abroad, it has to be transformed and transcoded to the international standards. Nevertheless, that is a different question of how the information is transferred between institutions, not how it is stored. 
 
 
-\subsubsection{How to transfer the data?}
+\subsubsection{The synchronization process}
 
-The obvious response would be: always with well-known standards. Although, in the chaotic context of several systems and applications not talking with each other that is not a reasonable answer. So, having this scenario into account it is possible to point out these guidelines:
+The obvious response to the problem of exchanging clinical information is well-known standards. Although, in the chaotic context of several systems and applications not talking with each other that is not a reasonable answer. So, having this scenario into account it is possible to point out these guidelines:
 \begin{itemize}
 \item the systems in development process or the systems yet to come should be built under some existing international standard;
 \item the data that is sent out from the PDS should use standards and interfaces completely defined and clear;
@@ -214,17 +230,22 @@ The obvious response would be: always with well-known standards. Although, in th
 
 
 
-\section{The Portuguese epSOS integration}
+\section{The epSOS integration}
 
-\subsection{Ongoing Developments}
+\subsection{Recent Developments}
+
+The epSOS project is based on two essential services (Patient Summary and ePrescription) but Portugal was integrated only with the PS sharing compromise. Since the epSOS integration is very dependent on the evolution of the other projects, particularly on the RCU2, there was no significant developments on it.
 
 \subsection{Future Vision}
 
 
 
+
+
+
 \section{The Portuguese Electronic Health Record}
 
-\subsection{Ongoing Developments}
+\subsection{Recent Developments}
 
 \subsubsection{The Professional Portal}
 The Professional Portal aims to be the gate through which the doctors will be able to access the clinical information about a patient. In this system, it is intended to gather the information coming from the Patient Portal (introduced by the referenced patient) but also the information stored at other institutions like primary healthcare institutions and hospitals. In this sense, it was necessary to think how it would be possible to integrate the data from two different sources:
