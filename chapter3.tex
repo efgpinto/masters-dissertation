@@ -1,8 +1,10 @@
+%TODO IHE profiles explicar
+
 \chapter{International Practices and Conventions}\label{chap:standards}
 
 \section*{}
 
-In this chapter, the objective is to present the main Health International Standards for interoperability, helping us to understand which options there are to allow the systems to properly share, interpret and store data. In addition, we analyse two EHR implementations case studies, from Canada and United Kingdom. Finally, we present a small overview about the epSOS project, trying to evidence the most important architecture factors that might influence the Portuguese EHR.
+In this chapter, the objective is to present the main Health International Standards for interoperability, helping us to understand which options there are to allow the systems to properly share, interpret and store data. In addition, we analyse two EHR implementations case studies, from Canada and England.
 
 
 %%========================================
@@ -103,7 +105,7 @@ In an interesting research by Gartner in 2006, Rishel predicted that ``the HL7 V
 To complete, the HL7 v3 seems the natural evolution for the applications using the previous versions. Although, that migration will take many years and it might not be so pacific as would be desirable.
 
 
-\subsubsection{Clinical Document Architecture} \label{sec:hl7-cda}
+\subsubsection{Clinical Document Architecture (CDA)} \label{sec:hl7-cda}
 Clinical Document Architecture (CDA) is an ANSI-certified standard from HL7 organization. The first version (Release 1.0) was released in November, 2000 and the second (Release 2.0) was published with the HL7 2005 Normative Edition.~\citep{Seven} CDA defines the semantic and structure of clinical documents aiming to allow its exchanging. The CDA documents are actually XML documents. That concept is derived from the fact that these documents ``derive their meaning from the HL7 Reference Information Model (RIM) and use the HL7 Version 3 Data Types which are part of the HL7 RIM''~\citep{Atalag2010}.
 
 The CDA document is constituted by two parts, an header and a body. The header is used to unambiguously state the semantics of each entry in the document. The body ``contains the clinical document content and can be either an unstructured text, or comprised of nested containers''~\citep{Eichelberg2005}.
@@ -215,7 +217,7 @@ In the next subsections, we will provide an overview by two EHR initiatives: the
 
 Canada Health Infoway is an non-for-profit organization founded by Canada's First Ministers in 2001. It was specifically created to accelerate the process of development of Electronic Heath Record systems, promoting the adoption of standards that guide to communication facilitation between different healthcare organizations. 
 
-In order to guide the development of the systems in each different province, Infoway provided a national framework called EHR Blueprint. The EHR Blueprint is a set of principles, guides and components. It states ``a comprehensive description of the components necessary for the interoperable EHR and describes, in broad terms, how the components are envisioned to work together"~\citep{April2006}.
+In order to guide the development of the systems in each different province, Infoway provided a national framework called EHR Blueprint. The EHR Blueprint is a set of principles, guides and components. It states ``a comprehensive description of the components necessary for the interoperable EHR and describes, in broad terms, how the components are envisioned to work together''~\citep{April2006}.
 
 \subsubsection{Sharing EHR Information} \label{sec:share-ehri}
 In the process of building an EHR, there are several methods to allow sharing EHR information along several services, consumers and providers. EHRS Blueprint advocates that the best method (at least for their reality) is the creation of a shared reference information source that is populated by several health-care organizations around Canada. This reference is populated with clinical relevant data and is maintained externally from ever health-care organization (or Points of Service, as designated in EHRS Blueprint). The Points of Service (PoS) are able to reference or pull data from the shared repository.

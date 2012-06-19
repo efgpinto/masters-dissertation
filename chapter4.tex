@@ -1,11 +1,12 @@
-\chapter{Structural Concepts and Architecture}
+\chapter{Structural Concepts and Architecture}\label{sec:struct_concepts}
 
 \section*{}
-An Electronic Health Record can be defined as the set of some essential healthcare services. In this section, we will describe the services which we consider the most important ones.
+
+An Electronic Health Record can be defined as the set of some essential healthcare services. In this section, the authors will describe the services which they consider the most important ones. The Patient Summary is the first concept to be analysed, being followed by the Personal Health Record. Both concepts are world wide known having an important when talking about the EHR implementation effort. Finally, there will be presented a small overview about the epSOS project, trying to evidence the most important architectural factors that might difficult the integration with the others countries.
 
 \section{Patient Summary} \label{sec:pat_sum}
 
-The Patient Summary (PS)~\citep{EPSOS_PS} is a set of information that allows an healthcare professional to have a quick and easy overview over a patient, used in the epSOS project. A similar concept is used in the England's National Health Service, called Summary Care Records. Although the name may vary, the concept is practically the same and stands as an electronic record that will give healthcare staff faster, easier access to essential information about a patient, to help provide safe treatment in an emergency, generally~\citep{Service2010}.
+The Patient Summary (PS)~\citep{EPSOS_PS} is a set of information that allows an healthcare professional to have a quick and easy overview over a patient, used in the epSOS project. A similar concept is used in the England's National Health Service, called Summary Care Records. Although the name may vary, the concept is practically the same and stands as an electronic record that will give healthcare staff faster and easier access to essential information about a patient. For instance, it is very helpful to provide safe treatment in an emergency~\citep{Service2010}.
 
 The epSOS Patient Summary contains the following data:
 \begin{itemize}
@@ -27,13 +28,13 @@ The benefits of the existence of a Patient Summary are not very consensual. In g
 
 In fact, it is possible to point out two completely different case studies, in terms of acceptance and success: England and Scotland. 
 
-In England, several articles~\citep{Anderson2010, Coiera2011, Greenhalgh2010} had been written expressing concerns and doubts about the concept, arguing that the Summary Care Record (in England) should be abandoned "for reasons of safety, functionality, clinical autonomy, patient privacy, and human rights"~\citep{Anderson2010}, stated Ross Anderson. Anderson justifies his critical saying that the data coming from multiple sources, for which there is no responsible, will create a poor and dangerously incomplete summary. Moreover, a final report~\citep{Stramer2010} of an independent evaluation of the Summary Care Record programme concluded that there is limited evidence that the SCR programme had so far achieved the benefits set out. Despite of stating an evidence of improved quality in some consultations, particularly those which involved medication decisions and a probably reduce of rare but important medication errors, the commission was not able neither to find evidence of reduction in onward referral nor to evaluate the impact on the satisfaction of patients. Although, the report defends that the SCR was particularly useful in patients unable to communicate or advocate for themselves. On the other hand, Mark Walport advocates~\citep{Walport2010} that "good information technology has the capacity to be transformational" insisting on the idea of quicker access to more reliable information that should help the treatment.
+In England, several articles~\citep{Anderson2010, Coiera2011, Greenhalgh2010} had been written expressing concerns and doubts about the concept, arguing that the Summary Care Record (in England) should be abandoned ``for reasons of safety, functionality, clinical autonomy, patient privacy, and human rights''~\citep{Anderson2010}, stated Ross Anderson. Anderson justifies his critical saying that the data coming from multiple sources, for which there is no responsible, will create a poor and dangerously incomplete summary. Moreover, a final report~\citep{Stramer2010} of an independent evaluation of the Summary Care Record programme concluded that there is limited evidence that the SCR programme had so far achieved the benefits set out. Despite of stating an evidence of improved quality in some consultations, particularly those which involved medication decisions and a probably reduce of rare but important medication errors, the commission was not able neither to find evidence of reduction in onward referral nor to evaluate the impact on the satisfaction of patients. Although, the report defends that the SCR was particularly useful in patients unable to communicate or advocate for themselves. On the other hand, Mark Walport advocates~\citep{Walport2010} that ``good information technology has the capacity to be transformational'' insisting on the idea of quicker access to more reliable information that should help the treatment.
 
-The Scottish case appears to gather more consensus and positive feedback. A study of Gartner Industry Research stated~\citep{Research2007} that the Emergency Care Summary (ECS), how it is called in Scotland, is a success because it met a specific business need. Also, it advocates that the clinician buy-in was achieved by involving the clinicians in the definition of ECS data and designing the security and access protocol for it as well as there was "training out-of-hours staff to use ECS appropriately" which was identified as a critical factor too. Another study~\citep{Jones2008} on the ECS reported an estimated volume of 5.1 million patient records created from the GP practices and 1.3 million of accesses to them, in 2008.
+The Scottish case appears to gather more consensus and positive feedback. A study of Gartner Industry Research stated~\citep{Research2007} that the Emergency Care Summary (ECS), how it is called in Scotland, is a success because it met a specific business need. Also, it advocates that the clinician buy-in was achieved by involving the clinicians in the definition of ECS data and designing the security and access protocol for it as well as there was ``training out-of-hours staff to use ECS appropriately'' which was identified as a critical factor too. Another study~\citep{Jones2008} on the ECS reported an estimated volume of 5.1 million patient records created from the GP practices and 1.3 million of accesses to them, in 2008.
 
 \section{Personal Health Record}
 
-A Personal Health Record is a system whereby individuals can "access, manage and share their health information, and that of others for whom they are authorized, in a private, secure, and confidential environment"~\citep{Health2003}. As it is reported by some articles~\citep{Tang2006,Tang2009}, the approach of the system might differ from being a totally isolated one till being integrated with the national healthcare system. Also, there is a lot of studies~\cite{Tang2009,Pagliari2007,Detmer2008, Fricton2008} about the benefits that those systems can bring:
+A Personal Health Record is a system whereby individuals can ``access, manage and share their health information, and that of others for whom they are authorized, in a private, secure, and confidential environment''~\citep{Health2003}. As it is reported by some articles~\citep{Tang2006,Tang2009}, the approach of the system might differ from being a totally isolated one till being integrated with the national healthcare system. Also, there is a lot of studies~\cite{Tang2009,Pagliari2007,Detmer2008, Fricton2008} about the benefits that those systems can bring:
 \begin{itemize}
 \item quality, completeness, depth, and accessibility of health information provided by patients;
 \item self management support - e.g. care plans, graphing of symptoms, passive biofeedback, tailored instructive or motivational feedback, decision aids, or reminders;
@@ -134,7 +135,7 @@ The core elements serve as the business layer of the system. These are the compo
 \item \textbf{Routing Manager} --- it stands as the pointer to the other countries, providing the routes to connect them. the routing tables are XML documents that might be stored locally or be fetched from a central repository either. 
 \end{itemize}
 
-\subsubsection{The National Interface and Connector}
+\subsubsection{The National Interface and Connector} \label{sec:epsos_ni}
 The National Interface represents the connection between the Workflow Manager and the National Connector. The National Connector is a collection of adapters that provide access and make use of the internal nation services, using the local protocols and formats. As it is the link for the national information systems, it can also invoke the Workflow Manager through the National Interface.
 
 
@@ -147,7 +148,7 @@ In order to facilitate this characterization, we will divide the description in 
 
 \subsubsection{Primary Healthcare Data}
 
-This kind of data is gathered among the primary healthcare institutions (Cuidados de Saúde Primários - CSP). The WHO defines the primary healthcare with five essential goals: "reducing exclusion and social disparities", "organizing health services around people's needs and expectations", "integrating health into all sectors", "pursuing collaborative models of policy dialogue" and "increasing stakeholder participation". In this sense, the information collected and managed at this level are:
+This kind of data is gathered among the primary healthcare institutions (Cuidados de Saúde Primários - CSP). The WHO defines the primary healthcare with five essential goals: ``reducing exclusion and social disparities'', ``organizing health services around people's needs and expectations'', ``integrating health into all sectors'', ``pursuing collaborative models of policy dialogue'' and ``increasing stakeholder participation''. In this sense, the information collected and managed at this level are:
 \begin{itemize}
 \item Allergies and intolerances;
 \item Vaccinations;
@@ -178,23 +179,10 @@ All the public hospitals use a system called Grupos de Diagnósticos Homogéneos
 Moreover, the information is not directly collected or transformed in GDHs. In first place, the information is stored at the local information systems or, in some cases, in paper~\citep{Ferreira2008}. Later, some specialized doctors transform the existing data into the GDH format so the hospital will be able to receive the state's support. Nowadays, the hospitals introduces the GDHs in a national central system called WebGDH. The information dispatch only occurs at the end of each month. The hospital diagnosis and procedures discharge letters are coded using the ICD-9-CM (see Section \ref{sec:icd}).
 
 
-\textbf{Problems}
-The process of transforming the locally stored information into GDH compliant data might modify and discredit it.
-The time period of one month to have the data centralized and normalized might be too large.
-
-\subsubsection{Problems}
-Have the primary healthcare institutions the capability to host and provide that information? Which uptime and availability levels are we talking about?
-The Patient Summary (RCU2) information will be stored where?
-
-The plan is that each primary healthcare institution would be responsible to host the Patient Summary information about their affected patients.
-
-Quais são as estruturas de dados necessárias para suportar os processos ? Qual a sua estrutura lógica e física ? Que tipo de protecção necessita ? Como é organizada, onde está localizada e como alimenta as diversas aplicações que suportam os processos ? Como detectamos e eliminamos as redundâncias ?
-
-
 \subsection{Application Architecture}
 
 
-Quais são as aplicações que suportam os processos-chave definidos na Arquitectura do Negócio ? Como interagem entre si ? São centralizados ou descentralizados ? Que informação guardam, como a actualizam e que dependências têm ?
+%Quais são as aplicações que suportam os processos-chave definidos na Arquitectura do Negócio ? Como interagem entre si ? São centralizados ou descentralizados ? Que informação guardam, como a actualizam e que dependências têm ?
 
 \subsubsection{SONHO}
 
@@ -208,7 +196,7 @@ This application allows the registration of clinical data (e.g. history of an in
 
 \subsubsection{SINUS}
 
-The SINUS (Sistema de Informação de Unidades de Saúde\footnote{Information System for Health Institutions}) was created with the same intents of SONHO but for the primary healthcare institution contexts. The SINUS is widely disseminated over Portugal, being present in 3 hospitals and 72 primary health care institutions. Currently, SINUS is still supporting the healthcare unit management, mainly in terms of medical consultation scheduling and vaccination. Furthermore, until that functionalities are replaced, the system must keep operational, although the recommended abandonment of the module "Managing Users"~\citep{Saude2010}.
+The SINUS (Sistema de Informação de Unidades de Saúde\footnote{Information System for Health Institutions}) was created with the same intents of SONHO but for the primary healthcare institution contexts. The SINUS is widely disseminated over Portugal, being present in 3 hospitals and 72 primary health care institutions. Currently, SINUS is still supporting the healthcare unit management, mainly in terms of medical consultation scheduling and vaccination. Furthermore, until that functionalities are replaced, the system must keep operational, although the recommended abandonment of the module ``Managing Users''~\citep{Saude2010}.
 
 
 \subsubsection{SAM}
@@ -228,23 +216,17 @@ The SAPE (Sistema de Apoio à Prática de Enfermagem\footnote{Nursing Practice S
 This system uses the CIPE (Classificação Internacional para a Prática de Enfermagem - version BETA 2\footnote{ICNP - International Classification for Nursing Practice of International Council of Nurses}) as a language reference. 
 
 
-\subsubsection{Problems}
-
-The healthcare professionals have to deal and work with several applications
-
-As aplicações são enumeradas, descritas e classificadas segundo diversos critérios. O seu papel na Arquitectura da Informação é claro e definido, as suas funções têm fronteiras e interfaces expostos ao resto das aplicações como serviços ou componentes reutilizáveis.
-
-
-\subsection{Technology Architecture}
+%\subsection{Technology Architecture}
 %TODO this
-Primary healthcare institutions with Oracle 7.3.5 databases
-One server for each institution
-Multiple authentication systems for each information system
+%Primary healthcare institutions with Oracle 7.3.5 databases
+%One server for each institution
+%Multiple authentication systems for each information system
+%
+%Que tecnologias melhor se adaptam às necessidades técnicas ? Que tecnologias têm o melhor retorno de investimento ? Que infra-estruturas de processamento, redes e comunicações são necessárias para suportar as necessidades das aplicações críticas para o negócio ? Quais os níveis de redundâncias físicas necessárias para responder aos níveis de serviço esperados ?
 
-Que tecnologias melhor se adaptam às necessidades técnicas ? Que tecnologias têm o melhor retorno de investimento ? Que infra-estruturas de processamento, redes e comunicações são necessárias para suportar as necessidades das aplicações críticas para o negócio ? Quais os níveis de redundâncias físicas necessárias para responder aos níveis de serviço esperados ?
+%\section{Country Healthcare Organization}
 
-\section{Country Healthcare Organization}
-
+%TODO falar na organização do país num dos capitulos acima - regioes de saude, aces, csp, etc
 %TODO falar da organização do país
 %TODO explicar CIC
 %TODO explicar ACSS e SPMS

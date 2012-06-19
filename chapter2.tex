@@ -13,6 +13,7 @@
 %escolhas.
 
 
+%TODO secção inicial sobre information systems
 %\section{Health Information Systems}
 %
 %\subsection{Information Systems}
@@ -22,7 +23,7 @@
 %\subsection{Portugal overview}\label{sec:dialecto}
 %
 
-In this chapter we present a general study about how is it possible to build ultra-large systems. The Information Systems (IS) are a kind of large dimension systems. The development methods used to implement these systems are an important source of experiences and techniques relevant to this dissertation. The first section describes some Enterprise Architecture Frameworks and in the second one we introduce two Architectural Models.
+In this chapter we present a general study about how is it possible to build ultra-large systems. The Information Systems (IS) are a kind of large dimension systems. The development methods used to implement these systems are an important source of experiences and techniques relevant to this dissertation. The first section describes some Enterprise Architecture Frameworks and in the second one we introduce three Architectural Models.
 
 
 \section{Enterprise Architecture Frameworks} \label{sec:ea-frams}
@@ -34,7 +35,7 @@ Despite of being a problem with a considerable age and very studied also, it did
 \item The Zachman Framework;
 \item The Open Group Architecture Framework (TOGAF);
 \item The Federal Enterprise Architecture Framework (FEAF);
-%TODO \item The Gartner Methodology.
+\item The Gartner Methodology. %TODO rever ou tirar-- atençao à referncia
 \end{itemize}
 
 In the next subsections, we will slightly describe each one of them, trying to understand which the advantages and weak points of each one. 
@@ -51,7 +52,7 @@ In the next subsections, we will slightly describe each one of them, trying to u
 
 \subsection{The Zachman Framework} \label{sec:zachman-fw}
 
-The Zachman Framework~\citep{Zachman1987} aims to guarantee that all stakeholders perspectives are being taken into account when developing a complex software system. In general terms, it is important to understand if all the artefacts are sufficiently focused and if the existing artefacts clarify all the players, from the business owner till the database designer, keeping all the visions aligned.
+The Zachman Framework~\citep{Zachman1987} aims to guarantee that all stakeholders' perspectives are being taken into account when developing a complex software system. In general terms, it is important to understand if all the artefacts are sufficiently focused and if the existing artefacts clarify all the players, from the business owner till the database designer, keeping all the visions aligned.
 
 In the original article and in order to explain his methodology, John Zachman uses an analogy between building an information system and construct a building. Thus, when constructing a building, the architect starts with understanding the general requirements as how many divisions it is supposed to have and the general purpose of the building, usually by using bubble charts. In a second phase, the architect's drawings aims to represent the links between each room of the building and also its general structure. Finally, the architect presents the plans and they must represent and reflect the customer requirements and expectations. These plans already include several details about electrical system, masonry, wood structure, etc. After plans arrive the contractor, they suffer some adjustments either because of costs/price or because another kind of constructing limitations.
 
@@ -180,21 +181,21 @@ An Architectural Style is a particular pattern that organizes components and con
 
 \subsection{The Metropolis Model} \label{sec:metro-model}
 
-Over the last years, two important trends are changing business and society: in one hand, the growing use of shared knowledge to create high-value services and projects; on the other hand, the growing preponderance of services. The business are evolving from a product-oriented perspective to a relation-oriented one. This change of paradigm brought the client to the middle of the business, helping to create value. The greatest examples of this new philosophy are the systems based in communities as Wikipedia or Facebook, that are able to generate profit and value directly from its users.
+Over the last years, two important trends are changing business and society: in one hand, the growing use of shared knowledge to create high-value services and projects; on the other hand, the growing preponderance of services. The businesses are evolving from a product-oriented perspective to a relation-oriented one. This change of paradigm brought the client to the middle of the business, helping to create value. The greatest examples of this new philosophy are the systems based in communities as Wikipedia or Facebook, that are able to generate profit and value directly from its users.
 
 The Metropolis Model~\citep{Kazman2009} appears as an attempt of describing really huge complex systems built from two basilar concepts: Open-source Software (OSS) and Community-Based Service Systems (CBSS). Despite the growing importance of OSS and CBSS, there will always be some systems that cannot be developed by crowds, either because of the business criticality or for demanding unquestionable security guarantees. The Metropolis Model does not really apply to those systems.
 
-We will start with an explanation of the `crowdsourced systems' and then briefly describe the principles of the Metropolis Model, always following the original article wrote by Rick Kazman and Hong-Mei Chen~\citep{Kazman2009}.
+We will start with an explanation of the ``crowdsourced systems'' and then briefly describe the principles of the Metropolis Model, always following the original article wrote by Rick Kazman and Hong-Mei Chen~\citep{Kazman2009}.
 
 \subsubsection{Crowdsourced Systems}
 
-The Metropolis Model identify its target as the `crowdsourced systems'. This concept includes the kind of systems with some special characteristics:
+The Metropolis Model identify its target as the ``crowdsourced systems''. This concept includes the kind of systems with some special characteristics:
 \begin{itemize}
 \item open teams --- meaning that the assumption of having a closed and dedicated team of programmers should be abandoned;
-\item `mashability' --- as the capacity of composing and integrating different systems and functionalities since that
+\item ``mashability'' --- as the capacity of composing and integrating different systems and functionalities since that
 the consumption of software by one person or project does not make it less available for consumption by another;
 \item conflicting, not knowable requirements --- the requirements emerge from the contributors and the users, making them highly unpredictable and often being in conflict between each other;
-\item continuous evolution --- as a consequence of constant changing requirements and distributed resources, these type of systems are never finished nor stable, introducing the `perpetual beta' concept. The development of the project is done through multiple iterations empowering the users with the responsibility of testing and assuring its quality;
+\item continuous evolution --- as a consequence of constant changing requirements and distributed resources, these type of systems are never finished nor stable, introducing the ``perpetual beta'' concept. The development of the project is done through multiple iterations empowering the users with the responsibility of testing and assuring its quality;
 \item focus on operations --- the availability of its operations are, most of the times, as critical as their utility and, in that sense, it is not accepted any kind of system downtime (Amazon, eBay or Google are good examples);
 \item sufficient correctness --- the notion of `perpetual beta' expresses the idea of acceptance some incompleteness in software (e.g. Wikipedia);
 \item unstable resources --- one of the most interesting facts is that, despite of the volatility of people, information and other resources that individually would be useless, when massive congregated are able to create reliable, stable and impressive computational powered systems;
@@ -228,7 +229,7 @@ The service-orientation paradigm has no official principles. Although, there are
 \item \textbf{Services share a formal contract} --- in order to be possible to share, there is a necessity for stablish the terms of information exchange;
 \item \textbf{Services are loosely coupled} --- services must be designed to avoid dependency outside itself;
 \item \textbf{Services abstract underlying logic} --- the only part visible to the outside is the interface and the requirements that need to be met to obtain the service, and that are clarified in the contract's description;
-\item \textbf{Services are `composable'} --- services might be aggregated with the finality of creating larger services, obtaining different abstraction levels and promoting re-utilization;
+\item \textbf{Services are ``composable''} --- services might be aggregated with the finality of creating larger services, obtaining different abstraction levels and promoting re-utilization;
 \item \textbf{Services are autonomous} --- the service is governed within an explicit boundary not being dependent to perform its operations;
 \item \textbf{Services are stateless} --- services should not be required to manage state information as that might preclude their ability to stay independent and not coupled. The concerning about maximizing the statelessness must be central.
 \end{itemize}
@@ -238,7 +239,7 @@ To conclude, as Srinivasan and Treadwell advocates~\citep{Srinivasan2005} ``serv
 
 
 
-\subsection{Event-driven Architectures}
+\subsection{Event-driven Architectures}\label{sec:eda}
 
 The Event-driven Architectures (EDA) are based in the event concept. An event~\citep{Michelson2006} is a notable thing that starts inside or outside the system and may consist in a problem, an opportunity and so forth. The event meaning should be defined in the business context. In an EDA, when an event is triggered it is immediately disseminated to every interested parties~\citep{Qin2008}. Then, these parties evaluate the event and might either call a service, trigger another component or simply take no action.
 
