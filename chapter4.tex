@@ -16,7 +16,7 @@ The epSOS Patient Summary contains the following data:
 \item Meta-data about the Patient Summary itself (e.g. when and by whom was created or modified).
 \end{itemize}
 
-The clinical data included may vary a little bit but, in general terms, is very similar to the set stated above. 
+The clinical data included may vary but, in general terms, is very similar to the set stated above. 
 
 The benefits of the existence of a Patient Summary are not very consensual. In general terms, the advantages announced are:
 \begin{itemize}
@@ -30,7 +30,7 @@ In fact, it is possible to point out two completely different case studies, in t
 
 In England, several articles~\citep{Anderson2010, Coiera2011, Greenhalgh2010} had been written expressing concerns and doubts about the concept, arguing that the Summary Care Record (in England) should be abandoned ``for reasons of safety, functionality, clinical autonomy, patient privacy, and human rights''~\citep{Anderson2010}, stated Ross Anderson. Anderson justifies his critical saying that the data coming from multiple sources, for which there is no responsible, will create a poor and dangerously incomplete summary. Moreover, a final report~\citep{Stramer2010} of an independent evaluation of the Summary Care Record programme concluded that there is limited evidence that the SCR programme had so far achieved the benefits set out. Despite of stating an evidence of improved quality in some consultations, particularly those which involved medication decisions and a probably reduce of rare but important medication errors, the commission was not able neither to find evidence of reduction in onward referral nor to evaluate the impact on the satisfaction of patients. Although, the report defends that the SCR was particularly useful in patients unable to communicate or advocate for themselves. On the other hand, Mark Walport advocates~\citep{Walport2010} that ``good information technology has the capacity to be transformational'' insisting on the idea of quicker access to more reliable information that should help the treatment.
 
-The Scottish case appears to gather more consensus and positive feedback. A study of Gartner Industry Research stated~\citep{Research2007} that the Emergency Care Summary (ECS), how it is called in Scotland, is a success because it met a specific business need. Also, it advocates that the clinician buy-in was achieved by involving the clinicians in the definition of ECS data and designing the security and access protocol for it as well as there was ``training out-of-hours staff to use ECS appropriately'' which was identified as a critical factor too. Another study~\citep{Jones2008} on the ECS reported an estimated volume of 5.1 million patient records created from the GP practices and 1.3 million of accesses to them, in 2008.
+The Scottish case appears to gather more consensus and positive feedback. A study of Gartner Industry Research stated~\citep{Research2007} that the Emergency Care Summary (ECS), how it is called in Scotland, is a success because it met a specific business need. Also, it advocates that the clinician buy-in was achieved by involving the clinicians in the definition of ECS data and designing the security and access protocol for it as well as there was ``training out-of-hours staff to use ECS appropriately'' which was identified as a critical factor too. Another study~\citep{Jones2008} on the ECS reported an estimated volume of 5.1 million patient records created from the general practitioner practices and 1.3 million of accesses to them, in 2008.
 
 \section{Personal Health Record}
 
@@ -45,7 +45,7 @@ A Personal Health Record is a system whereby individuals can ``access, manage an
 \item capture of symptom or health behaviour data by self report or objective monitoring through electronic devices.
 \end{itemize}
 
-There are some studies~\cite{Kaelber2008,Gearon2007} advocates the positive economic impact that a system like this may have. Also, this kind of system represents a new paradigm in which the patients have the central power about the information about himself~\citep{Ball2007}. Also, some new visions appeared, extracting the maximum value of the information inserted by the individual. For instance, how that information can be used in a mobile context~\citep{Brief2010}.
+There are some studies~\cite{Kaelber2008,Gearon2007} advocate the positive economic impact that a system like this may have. Also, this kind of system represents a new paradigm in which the patients have the central power over the information about themselves~\citep{Ball2007}. Also, some new visions appeared, extracting the maximum value of the information inserted by the individual. For instance, how that information can be used in a mobile context~\citep{Brief2010}.
 
 
 
@@ -54,7 +54,7 @@ There are some studies~\cite{Kaelber2008,Gearon2007} advocates the positive econ
 
 \section{European Patients - Smart open Services (epSOS)} \label{sec:epsos}
 
-The epSOS (European Patients - Smart open Services) is the main European electronic Health (eHealth) project created by European Commission and the partners. The main objective is to improve the health assistance to citizens who are abroad their own country. It aims to do so by implementing an interoperability platform, allowing different countries to exchange vital information. In that context, one health professional could access patient data from another country improving and précising the medical treatment~\citep{EpSOS}.
+The epSOS (European Patients - Smart open Services) is the main European electronic Health (eHealth) project created by European Commission and partners. The main objective is to improve the health assistance to citizens who are abroad their own country. It aims to do so by implementing an interoperability platform, allowing different countries to exchange vital information. In that context, one health professional could access patient data from another country improving and précising the medical treatment~\citep{EpSOS}.
 
 \subsection{Services and Standards}
 
@@ -120,13 +120,13 @@ We will overview the main functions of each component in the next subsections, f
 \subsubsection{epSOS Interface}
 The epSOS Interface is one of the common components, representing the higher layer of the system. This component might assume one of two roles: Income Protocol Terminator (IPT) when acting as NCP-A or Outbound Protocol Terminator (OPT) when acting as NCP-B.
 
-When Member State B (the consumer of some required information) dispatches a request, the OPT transforms the objects into SOAP requests at the same time that signs and certifies that request and send it to Member State A (the target NCP). At this point, the request arrives at the ICP of NCP-A. The ICP verifies the authenticity of the message and, if reliable, transcode the SOAP request into objects and convey them to a lower main component called Workflow Manager. On the other side, the NCP-B waits a response and when it arrives, it does exactly the same, returning the information to the its respective Workflow Manager. The Workflow Manager is one of the core components and will be exposed later.
+When Member State B (the consumer of some required information) dispatches a request, the OPT transforms the objects into SOAP requests at the same time that signs and certifies that request and send it to Member State A (the target NCP). At this point, the request arrives at the ICP of NCP-A. The ICP verifies the authenticity of the message and, if reliable, transcode the SOAP request into objects and convey them to a lower main component called Workflow Manager. On the other side, the NCP-B waits a response and when it arrives, it does exactly the same, returning the information to the respective Workflow Manager. The Workflow Manager is one of the core components and will be exposed later.
 
 \subsubsection{Core elements}
 The core elements serve as the business layer of the system. These are the components which are considered core elements:
 
 \begin{itemize}
-\item \textbf{Workflow Manager} --- it is the entry point for the business layer of NCP, working like an orchestrator and being called both by IPT and the National Connector. The Workflow Manager is the controller of all the operations process, being able to call other services available by other components interfaces, usually returning that information to the National Connector to the OPT;
+\item \textbf{Workflow Manager} --- it is the entry point for the business layer of NCP, working like an orchestrator and being called both by IPT and the National Connector. The Workflow Manager is the controller of all the operations process, being able to call other services available by other components interfaces, usually returning that information to the OPT National Connector;
 \item \textbf{Security Manager} --- it is the responsible for certifying and validating documents;
 \item \textbf{Transformation Manager} --- it works as a data translator from the local language to the epSOS Reference Terminology and vice-versa;
 \item \textbf{Terminology Services Access Manager} --- called by Transformation Manager. It is responsible for translating a local concept into a epSOS coded concept one, using the Terminology Repository, which represents the epSOS Reference Terminology, and is managed and updated by the country;
@@ -139,8 +139,38 @@ The core elements serve as the business layer of the system. These are the compo
 The National Interface represents the connection between the Workflow Manager and the National Connector. The National Connector is a collection of adapters that provide access and make use of the internal nation services, using the local protocols and formats. As it is the link for the national information systems, it can also invoke the Workflow Manager through the National Interface.
 
 
+
+
+
 \section{Portuguese Baseline Architecture}
+
 Before talking about where should we go, we must know the starting point. This section aims to provide a general overview about the current Portuguese Healthcare system, its information systems and the way they integrate or not with each other.
+
+
+\subsection{Organic Structure Summary}
+%\section{Country Healthcare Organization}
+
+The Portuguese National Health Service is called \textit{Serviço Nacional de Saúde} (SNS) and supervises all the public healthcare services in the country~\citep{SAUDE2011}. The institutions that constitute the SNS are every services or public healthcare providers, including:
+\begin{itemize}
+\item \textit{Agrupamentos de Centros de Saúde} (ACS) -- these healthcare primary institutions groups are public health services with administrative autonomy, consisting of several functional units that combine one or more health units and whose mission is to ensure the provision of primary health care to the population of a given geographical area;
+\item \textit{Unidades Locais de Saúde} (ULS) -- the health local units consisting of hospitals and health units, allow integration into a single public entity business, the various agencies and institutions of the SNS in a given municipality, providing health care to the population;
+\item \textit{Hospitals}.
+\end{itemize}
+
+Moreover, the country is divided in five regions and exists one regional administration, \textit{A\-dminis\-tra\-ção Regional de Saúde} (ARS), for each one of them.
+
+To the scope of this dissertation, is also interesting to present three entities inside the Ministry of Health:
+\begin{itemize}
+\item \textit{Administração Central do Sistema de Saúde, I.P.} (ACSS) -- the Central Administration of the Health System has the task of ensuring the financial management and human resources of the Ministry of Health and the SNS, and the facilities and equipment fostering the development and implementation, standardization, regulation and planning health policies~\citep{SAUDE2011};
+\item \textit{Serviços Partilhados do Ministério da Saude, E.P.E.} (SPMS) -- the Shared Services of Ministry of Health has the mission of provide shared services in the areas of purchasing and logistics, financial services, human resources and systems and information and communication technologies in order to ``centralize, streamline and rationalize'' procurement of goods and services in the SNS~\citep{Saude2010a};
+\item \textit{Comissão para a Informatização Clínica (CIC)} -- the Portuguese Committee for Clinical Informatics was created with the goal that the clinical information, sparsely produced and stored, is available to the user and health professional who provides any service, regardless of the time and place of deliver~\citep{Saude2011a}.
+\end{itemize}
+
+
+
+
+
+
 
 \subsection{Information Architecture}
 
@@ -181,16 +211,17 @@ Moreover, the information is not directly collected or transformed in GDHs. In f
 
 \subsection{Application Architecture}
 
+In this section, it is pretended to characterise the main applications in the public healthcare institutions. The goal is to understand which applications support the key business processes and how they interact with each other.
 
-%Quais são as aplicações que suportam os processos-chave definidos na Arquitectura do Negócio ? Como interagem entre si ? São centralizados ou descentralizados ? Que informação guardam, como a actualizam e que dependências têm ?
+%TODO São centralizados ou descentralizados ? Que informação guardam, como a actualizam e que dependências têm ?
 
 \subsubsection{SONHO}
 
-The SONHO (Sistema Integrado de Informação Hospitalar\footnote{Integrated System for Hospital Information}) is an information system for patient management created in 1988 and disseminated by the Portuguese hospitals, with no competitors at that time~\citep{Teixeira2005}. Nowadays, SONHO is the dominant system in Portuguese hospitals' being installed in about 90\% of the Portuguese public hospitals. SONHO has as the main objective to control the flow of patients in the hospital, that mean to know who is in and who leaves, and what resources were spend with which patient, aiming to ensure some standardization of statistical data and billing. This system started with three modules: outpatient, inpatient and emergency but some new modules were added, like surgery operation room and day care modules~\citep{Cruz-correia}.
+The SONHO (Sistema Integrado de Informação Hospitalar\footnote{Integrated System for Hospital Information}) is an information system for patient management created in 1988 and disseminated by the Portuguese hospitals, with no competitors at that time~\citep{Teixeira2005}. Nowadays, SONHO is the dominant system in Portuguese hospitals' being installed in about 90\% of the Portuguese public hospitals. SONHO has as the main objective to control the flow of patients in the hospital, that mean to know who is in and who leaves, and what resources were spend with which patient, aiming to ensure some standardization of statistical data and billing. This system started with three modules: outpatient, inpatient and emergency but some new modules were added, like surgery operation room and day care modules~\citep{Cruz-correia}. The user interface is represented in Figure~\ref{fig:SONHO_ecra1}.
 
 This application allows the registration of clinical data (e.g. history of an inpatient encounter, emergency summary report, referral letters, diagnosis and procedures), allowing the establishment of a bridge between the clinical data and the production of the DGHs with billing purposes~\citep{GDHSONHO2011}.
 
-\myfigure{SONHO_ecra1}{First screen of SONHO}
+\mycustomfigure{SONHO_ecra1}{First screen of SONHO}{width=0.7\textwidth}
 
 %TODO SONHO is seriously compromised due to its outdated infrastructure, because it de- pends on currently discontinued Oracle Database and Oracle Forms versions. Many hospitals using SONHO are seeking alternatives to it, and thereby facing migration problems.
 
@@ -213,10 +244,31 @@ In 1999, the Ministry of Health decides to start developing a new system called 
 \subsubsection{SAPE}
 The SAPE (Sistema de Apoio à Prática de Enfermagem\footnote{Nursing Practice Support System})~\citep{ACSS_SAPE2010} is a software directed to the nursing professionals, that allows the scheduling and recording of the healthcare activities at the health institutions. SAPE was built to address the nurse daily activities, trying to organize and facilitate the information consume. On the other hand, it was also created with the objective of normalizing the nursing records system. The collected data results from the nursing healthcare at the institutions where the system is implemented.
 
-This system uses the CIPE (Classificação Internacional para a Prática de Enfermagem - version BETA 2\footnote{ICNP - International Classification for Nursing Practice of International Council of Nurses}) as a language reference. 
+This system uses the CIPE (Classificação Internacional para a Prática de Enfermagem - version BETA 2\footnote{ICNP - International Classification for Nursing Practice of International Council of Nurses}) as a language reference. The Figure~\ref{fig:SAPE_ecra} presents the user interface of this system.
+
+\mycustomfigure{SAPE_ecra}{User interface of SAPE}{width=0.7\textwidth}
 
 
-%\subsection{Technology Architecture}
+\subsection{Technical Architecture}
+
+This section overviews the technical infrastructure that supports most of the public healthcare organizations nowadays, in both hospitals and primary healthcare institutions.
+
+\subsubsection{Hospitals}
+
+In the healthcare context, the hospitals are probably the most complex institutions. These institutions have several services to offer which means that their information systems have to support multiple processes and professionals from different specialities. In this sense, these institutions usually have each own information systems department, responsible for maintaining the hospital technical infrastructure and adjusting the systems to the existing processes.
+
+The need for supporting several processes led the hospitals to successively buy and implement applications to solve specific problems creating a truly complex web of systems working as islands. 
+
+%genericamente mais evoluidos mas tb com mt mais diversidade de de sistemas instalados e 
+%departamentos de sistemas de informação q desenvolvem sistem à medida
+
+
+\subsubsection{Primary Healthcare Institutions}
+
+In the case of the primary healthcare institutions the reality is very different. These kind of institutions are smaller and with much less complex processes. Also, they mainly use the systems developed and supported by the Ministry of Health~\citep{Saude2010}.
+However, the technical infrastructure where are installed those systems is, most of the times, very poor. Unlike the hospitals, these units neither have a support team to keep the servers up and running nor an appropriate room.
+
+
 %TODO this
 %Primary healthcare institutions with Oracle 7.3.5 databases
 %One server for each institution
@@ -224,9 +276,3 @@ This system uses the CIPE (Classificação Internacional para a Prática de Enfe
 %
 %Que tecnologias melhor se adaptam às necessidades técnicas ? Que tecnologias têm o melhor retorno de investimento ? Que infra-estruturas de processamento, redes e comunicações são necessárias para suportar as necessidades das aplicações críticas para o negócio ? Quais os níveis de redundâncias físicas necessárias para responder aos níveis de serviço esperados ?
 
-%\section{Country Healthcare Organization}
-
-%TODO falar na organização do país num dos capitulos acima - regioes de saude, aces, csp, etc
-%TODO falar da organização do país
-%TODO explicar CIC
-%TODO explicar ACSS e SPMS
