@@ -2,14 +2,16 @@
 
 The Information Technologies have revolutionized many areas of society. Since many years ago, the health area has been searching for solutions to improve existing processes, having as the main objective the improvement of healthcare services. In this sense, the availability of patient clinical data can be vital to a more effective diagnosis and treatment, by a health professional. This information should be accessible regardless of context, place, time or where it was collected. In order to share this type of data, many countries have initiated projects implementing Electronic Health Record (EHR), including Portugal in 2010.
 
-The EHR complexity and scope makes it an high cost and risk project. In fact, the inherent difficulties of a project like this are as critical as its importance and the impact it has on societies. The implementation of a successful EHR implies, in most cases, the involvement of all stakeholders, from patient to health organizations, along with the professionals themselves, becoming a very long and continuous process.
+The EHR complexity and scope makes it a high cost and risk project. In fact, the inherent difficulties of a project like this are as critical as its importance and the impact it has on societies. The implementation of a successful EHR implies, in most cases, the involvement of all stakeholders, from patient to health organizations, along with the professionals themselves, becoming a very long and continuous process.
 
-In the context of this dissertation we pretend to build a architecture proposal for implementing the Portuguese EHR. The proposed architecture should serve as a platform for sharing information between multiple health entities, normalizing processes, applying conventions and chasing interoperability among agents. The ability of the system evolution on one hand, and ease of integration in international projects on the other, are two major concerns to be taken into account throughout the proposal definition process.
+In the context of this dissertation we pretended to build an architecture proposal for implementing the Portuguese EHR. The proposed architecture should serve as a platform for sharing information between multiple health entities, normalizing processes, applying conventions and chasing interoperability among agents. The ability of the system evolution on one hand, and ease of integration in international projects on the other, were two major concerns to be taken into account throughout the proposal definition process.
 
-This document reflects the study in order to understand what processes and practices are used in implementing these large-scale projects. Accordingly, we present some models of enterprise architectures as well as some architectural styles, both corresponding to high levels of abstraction. Regarding the integration of different systems, this document addresses several international conventions for transmission, encoding and storing of clinical information, such as HL7, openEHR and SNOMED CT. Also, we briefly analyse two International EHR case studies, in UK and Canada. In conclusion it should be noted that regardless of the technical challenges that may arise, the process must always be guided by the objective of improving healthcare services to the patient.
+This dissertation project was developed in straight collaboration with the Ministry of Health. The architectural proposal results basically from the application of some ideas of Metropolis Model and Service-oriented Architectures. This proposal advocates the delimitation of the platform scope with the goal of promoting the creation of value by the stakeholders through well-defined and standardised data services.
+
+Despite of the pressure to obtain quick results, the research work concludes that it is possible to do some strategic adjustments and, with that, be able to accomplish quick wins without precluding the future met of requirements. However, the creation of an EHR is a continuous and long process that will extend for several years.
 
 \section*{}
-\textbf{Keywords:} Electronic Health Record; Health Information Systems; Interoperability; Information Systems Architecture
+\textbf{Keywords:} Electronic Health Record; Health Information Systems; Interoperability; Information Systems Architecture; Portugal
 
 \chapter*{Resumo}
 
@@ -19,10 +21,15 @@ A complexidade e abrangência faz do RSE um projecto de altos custo e risco. De 
 
 No contexto desta dissertação pretende-se construir uma proposta de arquitectura para implementação do RSE em Portugal. A arquitectura proposta deve servir como uma plataforma de partilha de informação entre as mais diversas entidades de saúde, nor\-ma\-li\-zan\-do os processos e codificações nesta área e promovendo a interoperabilidade entre os agentes. A capacidade de evolução do sistema por um lado, e a facilidade de integração em projectos internacionais por outro, são duas grandes preocupações a ter em conta ao longo do processo de definição da proposta.
 
-O presente documento reflecte o estudo feito no sentido de perceber quais os processos e práticas existentes na implementação destes projectos de larga escala. Nesse sentido, apresentam-se alguns modelos de arquitecturas empresariais assim como alguns estilos de arquitectura, ambos correspondentes a níveis de elevada abstracção. No que diz respeito à integração de diferentes sistemas, são abordadas diversas convenções internacionais para transmissão, codificação e armazenamento da informação clínica, como o HL7, SNOMED CT ou openEHR. Ainda no âmbito deste documento, são analisados dois casos de estudo internacionais do RSE, no Reino Unido e no Canadá. Para concluir, importa sublinhar que, independentemente dos desafios técnicos que se possam apresentar, o processo deve ser sempre guiado pelo objectivo principal de melhorar os cuidados de saúde ao paciente.
+Este projeto de dissertação foi desenvolvido em estreita colaboração com o Ministério da Saúde. A proposta de arquitectura resulta da aplicação de alguns principios do modelo de Metropolis e das Arquiteturas Orientadas a Serviços. A proposta elaborada defende a delimitação do âmbito da plataforma, tendo como objetivo a promoçãodo processo de criação de valor pelas partes interessadas, através de serviços de dados bem definidos e padronizados.
+
+Apesar da pressão para obter resultados rápidos, este trabalho de pesquisa concluiu que é possível fazer alguns ajustes estratégicos e, com isso, ser capaz de realizar ganhos rápidos sem que tal afecte os futuro requisitos. No entanto, a criação de um RSE é um processo contínuo e de extenso que vai durar por vários anos.
+
+
+
 
 \section*{}
-\textbf{Palavras-chave:} Registo de Saúde Eletrónico; Sistema de Informação da Saúde; Interoperabilidade; Arquitectura de Sistemas de Informação
+\textbf{Palavras-chave:} Registo de Saúde Eletrónico; Sistema de Informação da Saúde; Interoperabilidade; Arquitectura de Sistemas de Informação; Portugal
 
 %O Resumo fornece ao leitor um sumário do conteúdo da dissertação.
 %Deverá ser breve mas conter detalhe suficiente e, uma vez que é a porta

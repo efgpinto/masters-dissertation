@@ -265,7 +265,7 @@ The epSOS project may become an important catalyst to the introduction of standa
 If we will be sending the RCU2 codified with HL7 CDA, it may be interesting to start sharing it the same way internally. In order to achieve that, it will be necessary to bring the National Connector (see Section~\ref{sec:epsos_ni}) into the scope of PDS instead of staying as a service created only to epSOS. The next components seems to be fundamental:
 \begin{itemize}
 \item locate the National Connector, which could have the responsibility to transcode from RCU2 to HL7 CDA, within the PDS scope;
-\item define the services using the IHE profiles (see Section~\ref{sec:ihe}); %TODO IHE
+\item define the services using the standards (e.g. IHE profiles); %TODO (see Section~\ref{sec:ihe});
 \end{itemize}
 
 This way, it will be possible to share the standardized RCU2 not only to other countries but to several institutions, namely the private ones. Another important note is the existing dependency between this case and the \textit{Portal do Utente} in order to confirm the patient consents.
@@ -391,19 +391,9 @@ The urgency for this record is recognized amongst the professionals working in t
 %TODO falar sobre a aplicação ao publico com objectivo de estender ao privado
 %TODO falar instituções que não registam electronicamente
 
+\section{Architecture Overview}
 
-\begin{landscape}
-\centering     % optional, probably makes it look better to have it centered on the page
-\mycustomfigure{general_architecture}{General view of the architecture future vision}{height=0.9\textheight}
-\end{landscape}
-
-\section{Summary}
-
-%TODO finish
-%TODO estratégia: o que é novo e para fora deve ser com standards
-%TODO quem nao regista electronicamente
-
-The entity responsible for planning this change process defined four essential projects:
+The overview is constituted by four essential modules. The entity (CIC) responsible for planning this change process defined the following projects:
 \begin{itemize}
 \item \textit{Portal do Utente (as minhas notas)} -- the Portuguese PHR;
 \item \textit{Resumo Clínico Único do Utente} -- the Portuguese Patient Summary;
@@ -411,7 +401,8 @@ The entity responsible for planning this change process defined four essential p
 \item \textit{Portal do Profissional} -- the portal where the professionals access the patient clinical data.
 \end{itemize}
 
-All these projects are interconnected by a platform created with that goal and named \textit{Plataforma de Dados de Saúde}. The future vision is based on limiting the scope of PDS to the minimum, removing all the user interfaces clients from its scope. To do this, it is necessary to implement services and interface that those client interface can use to present the information. This way, it is possible in future to open that services to other stakeholders, letting them construct alternatives to the official clients nd new ways of using that information. These future ``investors'' may be companies that build software to the healthcare arena as well as private healthcare institutions.
+All these projects are supposed to be interconnected by a platform created with that goal and named \textit{Pla\-ta\-for\-ma de Dados de Saúde}. The future vision, represented by the Figure~\ref{fig:general-architecture} is based on limiting the scope of PDS to the minimum, removing all the user interfaces clients from its scope. To do this, it is necessary to implement services and interface that those client interface can use to present the information. This way, it is possible in future to open that services to other stakeholders, letting them construct alternatives to the official clients nd new ways of using that information. These future ``investors'' may be companies that build software to the healthcare arena as well as private healthcare institutions.
+
 
 The obvious response to the problem of exchanging clinical information is using well-known standards. Although, in the chaotic context of several systems and applications not talking with each other that is not a reasonable answer. So, having this scenario into account it is possible to point out these guidelines:
 \begin{itemize}
@@ -439,6 +430,12 @@ group the RCU2 into real data warehouses by regions with reliable backup systems
 { designing and discussing the new background system and the \textit{Portal Internacional} & integrate the National Connector into the PDS }
 { completely dependent of other services like \textit{Portal do Utente} or RCU2 & - }
 { - & define the services of NC using IHE profiles; necessity for an Healthcare Professional Identity Provider }
+
+
+\begin{landscape}
+\centering     % optional, probably makes it look better to have it centered on the page
+\mycustomfigure{general_architecture}{General view of the architecture future vision}{height=0.99\textheight}
+\end{landscape}
 
 %\mysummary{sum-pds}{Summary of PDS and \textit{Portal do Professional}}
 %{}
