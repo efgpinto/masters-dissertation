@@ -1,3 +1,23 @@
-\chapter{RCU2 Database Model} \label{ap1:rcu2_db}
+\chapter{Specific Contributions} \label{ap1:rcu2_db}
 
-	
+\section{RCU2}
+
+\subsection{Local Database Model}
+
+In the scope of the collaboration with Ministry of Health, it was developed the database model to held the RCU2 data. The data model was built in a team effort with Dr. Raquel Deveza\footnote{Dr. Raquel Deveza - Coordinator of the RCU2 project at SPMS}, Eng. Miguel Oliveira\footnote{Eng. Miguel Oliveira - FEUP team member}, Dr. José Castanheira\footnote{Dr. José Castanheira - Coordinator of Information Systems Unit of ARSN}. The model is divided in two layer:
+\begin{itemize}
+\item the bottom layer has the tables with all the data and logs of the operations (see Figure ~\ref{fig:modelo_local_rcu2});
+\item the top layer provides the views to be consulted and which use the structure above (see Figure ~\ref{fig:modelo_local_rcu2_vistas}).
+\end{itemize}
+
+
+\begin{landscape}
+\centering     % optional, probably makes it look better to have it centered on the page
+\mycustomfigure{modelo_local_rcu2}{Database model developed internally to support the RCU2 - bottom layer}{height=0.7\textheight}
+\end{landscape}
+
+
+\begin{landscape}
+\centering     % optional, probably makes it look better to have it centered on the page
+\mycustomfigure{modelo_local_rcu2_vistas}{Database model developed internally to support the RCU2 - top layer}{height=0.7\textheight}
+\end{landscape}

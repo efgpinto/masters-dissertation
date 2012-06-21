@@ -12,7 +12,7 @@ The methodology was based on a relation of great cooperation between the team an
 
 \section{Strategic vision}
 
-The CIC opted by a strategy based on several projects and new processes running at the same, instead of one with long study, research phases and long implementations schedules. This agile strategy led to the creation of 4 projects, which has different goals but are strong connected to the creation of an EHR:
+The CIC opted by a strategy based on several projects and new processes running at the same time, instead of one with long study, research phases and long implementations schedules. This agile strategy led to the creation of 4 projects, which has different goals but are strong connected to the creation of an EHR:
 
 \begin{itemize}
 \item Personal Health Records -- website that is supposed to has the functionalities of a normal PHR, letting the patient to introduce clinical information and give consent for it to be accessed by healthcare professionals. The Patient Portal already existed but was added to it a new module called \textit{\textbf{As minhas notas}}; 
@@ -76,7 +76,7 @@ The strategy is not to replace the existing systems but to fit them trying not t
 \subsubsection{Rationale}
 Most of the systems in use were created several years ago. That is, every healthcare professional is accustomed to the existing systems and that a sudden and unprepared change to the way they have to work and do their job might sentence the project's failure.
 \subsubsection{Implications}
-There will be necessary to understand which systems are fundamental to the business goals, meaning that might be some systems which does not worth to integrate with, either because they are too old and will be deprecated soon or because they simply have not enough audience.
+It will be necessary to understand which systems are fundamental to the business goals, meaning that might be some systems which does not worth to integrate with, either because they are too old and will be deprecated soon or because they simply have not enough audience.
 
 
 
@@ -89,7 +89,7 @@ There will be necessary to understand which systems are fundamental to the busin
 
 It is important to notice the introduction of the Patient Portal that centralizes all the patients' information across the country, in the same system.
 
-To the existing Patient Portal was added a new section called "My Notes". This section pretends to be an PHR system. For now, the portal allows an individual to input the following information: emergency contacts, health information (height, weight, blood glucose, or blood pressure), lifestyle, health problems, allergies and medications. As stated at the service, the objective is to allow the citizen to have an active role in managing, promoting and improving its health state.
+To the existing Patient Portal was added a new section called "My Notes". This section pretends to be a PHR system. For now, the portal allows an individual to input the following information: emergency contacts, health information (height, weight, blood glucose, or blood pressure), lifestyle, health problems, allergies and medications. As stated at the service, the objective is to allow the citizen to have an active role in managing, promoting and improving its health state.
 
 The system also allows the individual to give or withdraw the consent to share the information among the public healthcare institutions.
 
@@ -170,7 +170,7 @@ Most of the information selected to be part of RCU2 is present in the CSP units.
 %TODO ir buscar info aos webgdhs
 %TODO ou usar webgdhs.. explicar melhor
 
-In a parallel work, there was the need of defining the new data model for the RCU2 (the Patient Summary system). In a team effort with Dr. Raquel Deveza\footnote{Dr. Raquel Deveza - Coordinator of the RCU2 project}, Eng. Miguel Oliveira\footnote{Eng. Miguel Oliveira - FEUP team member}, Dr. José Castanheira\footnote{Dr. José Castanheira - Coordinator of Information Systems Unit of ARSN} it has been defined a database model that would be able to store the RCU2 information. The model can be found at Appendix~\ref{ap1:rcu2_db}.
+In a parallel work, there was the need of defining the new data model for the RCU2 (the Patient Summary system). In a team effort it has been defined a database model that is be able to store the RCU2 information. The model can be found at Appendix~\ref{ap1:rcu2_db}.
 
 The model was conceived with two main concerns:
 \begin{itemize}
@@ -195,7 +195,13 @@ The information has to flow between different institutions. Mainly, it has to be
 \item if requested, the data shall also be sent to another national institutions but not without making it anonymous.
 \end{itemize}
 
-
+In terms of the standard recommended to export the RCU2 to others institutions, the HL7 CDA (Section~\ref{sec:hl7-cda}) appears to be the best option:
+\begin{itemize}
+\item sufficiently recent to be actual but sufficient old to be mature;
+\item standard used within the epSOS project;
+\item evolution of HL7 V2 which might be used to transfer the event data;
+\item international well-known standard.
+\end{itemize}
 
 \subsubsection{The management process}
 
@@ -232,14 +238,11 @@ Also, since that the systems are not likely to be substituted in the mid-term fu
 
 \subsubsection{The synchronization process}
 
-The obvious response to the problem of exchanging clinical information is well-known standards. Although, in the chaotic context of several systems and applications not talking with each other that is not a reasonable answer. So, having this scenario into account it is possible to point out these guidelines:
-\begin{itemize}
-\item the systems in development process or the systems yet to come should be built under some existing international standard;
-\item the data that is sent out from the PDS should use standards and interfaces completely defined and clear;
-\item the data flow inside the PDS may not be using standards provided that that option brings clearly benefits;
-\item regarding the existing systems, a process for adopting some standard should be done with little accomplishments, step by step.
-\end{itemize}
+The synchronization process has to be analysed in two different contexts: the hospitals and the CSP. About the hospitals, the GDH repository could be used to retrieve information from the hospitals to the RCU2. However, as stated earlier in this document (Section~\ref{sec:hosp_data}), it could bring problems of confidence in the information. On the other hand, this system has the information codified which has a great advantage since it would allow to integrate that information much quicker and with fewer effort. The other alternative would be to modify the existing systems.
 
+The situation of the CSP unit is quite different. In this case, it will be necessary to build a infrastructure to keep the temporary information and dispatch it daily.
+
+%TODO melhorar
 
 
 \section{The epSOS integration}
@@ -262,10 +265,10 @@ The epSOS project may become an important catalyst to the introduction of standa
 If we will be sending the RCU2 codified with HL7 CDA, it may be interesting to start sharing it the same way internally. In order to achieve that, it will be necessary to bring the National Connector (see Section~\ref{sec:epsos_ni}) into the scope of PDS instead of staying as a service created only to epSOS. The next components seems to be fundamental:
 \begin{itemize}
 \item locate the National Connector, which could have the responsibility to transcode from RCU2 to HL7 CDA, within the PDS scope;
-\item define the services using the IHE profiles (see Section~\ref{sec:ihe});
+\item define the services using the IHE profiles (see Section~\ref{sec:ihe}); %TODO IHE
 \end{itemize}
 
-This way, it will be possible to share the standardized RCU2 not only to other countries but to several institutions, namely the private ones. Another important note is the dependency existing between this case and the \textit{Portal do Utente} in order to confirm the patient consents.
+This way, it will be possible to share the standardized RCU2 not only to other countries but to several institutions, namely the private ones. Another important note is the existing dependency between this case and the \textit{Portal do Utente} in order to confirm the patient consents.
 
 \subsubsection{Case B}
 
@@ -367,14 +370,16 @@ The use of an event-oriented architecture would be like (Fig. \ref{fig:pds-eda})
 
 In summary, it consists in the creation of a specific service inside PDS, that would be responsible for managing the subscriptions that the institutions do. Moreover, the family doctors would also be automatically registered to receive notifications about the new proposals for the their patients RCU2.
 
+Since we are talking about triggering and handling events, the use of HL7 V2 (Section~\ref{sec:hl7-v2}) might facilitate the data transfer between the local institutions and the services above (e.g. Subscription Service). Such as described in the referred section, in addition of HL7 V2 being an event-oriented standard it is also an excellent way of sending small portions of data.
+
+
 \subsubsection{Healthcare Professional Identity Provider}\label{sec:hpip}
 
-An Healthcare Professional Identity Provider could help to solve some significant problems in the Portuguese health area. In fact, this problem must be divided in two different issues. The first and most important has to do with the creation of a health professionals national record as it exists to the patients, the RNU - Registo Nacional de Utentes (Patients National Record). The aim of the system would be to store all the professionals working in the healthcare services, helping the Ministry and its information system particularly.
+An Healthcare Professional Identity Provider could help to solve some significant problems in the Portuguese health area. In fact, this problem must be divided in two different issues. The first and most important has to do with the creation of a health professionals national record as it exists to the patients, the \textit{Registo Nacional de Utentes}\footnote{Patients National Record} (RNU). The aim of the system would be to store all the professionals working in the healthcare services, helping the Ministry and its information system particularly.
 
 The second issue is the creation of an identity provider certifying that one individual is actually an authenticated and authorized healthcare professional and must be able to access some kind of information.
 
 The urgency for this record is recognized amongst the professionals working in the Ministry's information systems. However, despite of the importance that that kind of record might bring to the systems development, it is not recognized by the superior instances since that it is not a project with enough visibility.
-
 
 
 %TODO review
@@ -400,13 +405,21 @@ The urgency for this record is recognized amongst the professionals working in t
 
 The entity responsible for planning this change process defined four essential projects:
 \begin{itemize}
-\item \textit{Portal do Utente (as minhas notas)} - the Portuguese PHR;
-\item \textit{Resumo Clínico Único do Utente} - the Portuguese Patient Summary;
-\item epSOS integration - \textit{Portal Internacional} and the RCU2 availability abroad the country;
-\item \textit{Portal do Profissional}- the portal where the professionals access the patient clinical data.
+\item \textit{Portal do Utente (as minhas notas)} -- the Portuguese PHR;
+\item \textit{Resumo Clínico Único do Utente} -- the Portuguese Patient Summary;
+\item epSOS integration -- \textit{Portal Internacional} and the RCU2 availability abroad the country;
+\item \textit{Portal do Profissional} -- the portal where the professionals access the patient clinical data.
 \end{itemize}
 
-All these projects are interconnected by a platform created with that goal and named \textit{Plataforma de Dados de Saúde}. The future vision is based on limiting the scope of PDS to the minimum, removing all the user interfaces clients from its scope. To do this, it is necessary to implement services and interface that those client interface can use to present the information. This way, it is possible in future to open that services to other stakeholders, letting them construct alternatives to the official clients nd new ways of using that information. These future "investors" may be companies that build software to the healthcare arena as well as private healthcare institutions.
+All these projects are interconnected by a platform created with that goal and named \textit{Plataforma de Dados de Saúde}. The future vision is based on limiting the scope of PDS to the minimum, removing all the user interfaces clients from its scope. To do this, it is necessary to implement services and interface that those client interface can use to present the information. This way, it is possible in future to open that services to other stakeholders, letting them construct alternatives to the official clients nd new ways of using that information. These future ``investors'' may be companies that build software to the healthcare arena as well as private healthcare institutions.
+
+The obvious response to the problem of exchanging clinical information is using well-known standards. Although, in the chaotic context of several systems and applications not talking with each other that is not a reasonable answer. So, having this scenario into account it is possible to point out these guidelines:
+\begin{itemize}
+\item the systems in development process or the systems yet to come should be built under some existing international standard;
+\item the data that is sent out from the PDS should use standards and interfaces completely defined and clear;
+\item the data flow inside the PDS may not be using standards if that option clearly brings benefits;
+\item regarding the existing systems, a process for adopting some standard should be done with small accomplishments, step by step.
+\end{itemize}
 
 The next tables help to understand the state of the four essential components. 
 

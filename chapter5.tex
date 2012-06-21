@@ -1,11 +1,39 @@
 \chapter{Conclusions} \label{chap:concl}
 
-\section*{}
+%Deve ser apresentado um resumo do trabalho realizado e apreciada a
+%satisfação dos objectivos do trabalho, uma lista de contribuições
+%principais do trabalho e as direcções para trabalho futuro.
+%
+%A escrita deste capítulo deve ser orientada para a total compreeensãoo
+%do trabalho, tendo em atenção que, depois de ler o Resumo e a
+%Introdução, a maioria dos leitores passará à leitura deste capítulo de
+%conclusões e recomendações para trabalho futuro.
 
-The importance of an Electronic Health Record system and its benefits in the healthcare services equals the difficulty that they face to be implemented. In fact, these kind of platform take many years to be implemented, resulting in high costs. In this context, it is important that this architecture proposal can reflect the existing case studies, in order to avoid approaches that could led to implementation failures. However, the challenges are not only the size of such project. Most of the times, EHR implementations have to deal with and manage multiple external factors, either political, economical or social. These factors tend to limit and condition the execution progress.
 
-At this phase, it is already possible to state some critical success factors in terms of the final architecture proposal. The health area has several actors, multiple institutions and not less business processes. In this scenario, it will be fundamental that the research for designing the proposal can be done close to the main stakeholders, essentially the healthcare organizations IT directors. On the other hand, the Portugal economic situation demands these projects to obtain short-term results. In this dissertation, the main objective is not the short-term perspective but the long-term evolution and vision of the system. However, it is also important that the architecture proposal allows to obtain some quick results, without precluding the future development, not only because of the economic situation but also because that might be the right way to engage all the EHR stakeholders, from patients to healthcare organizations.
+The importance of an Electronic Health Record system and its benefits in the healthcare services equals the difficulty that they face to be implemented. In fact, this kind of platform take many years to be implemented, always resulting in high costs. In this context, it was important that this architecture proposal could reflect the existing case studies, in order to avoid approaches that could led to implementation failures. However, the challenges are not only the size of such project. Most of the times, EHR implementations have to deal with and manage multiple external factors, either political, economical or social. These factors tend to limit and condition the execution progress.
 
-The validation of the architecture might be an important point in order to increase confidence and decrease the implementation risks. Despite of that analysis might not be trivial, some evaluation software architecture techniques might be explored and adapted to this context. Due to the project specificities it was essential to close and clearly define the scope of this dissertation, under the penalty of becoming too sparse.
+
+\section{General}
+
+The health area has several actors, multiple institutions and not less business processes. In this scenario, it was fundamental that the research for designing the proposal was done close to the main stakeholders, essentially the healthcare organizations IT directors. On the other hand, the Portugal economic situation demands these projects to obtain short-term results. In this dissertation work, the main objective was not the short-term perspective but the long-term evolution and vision of the system. However, it was also important that the architecture proposal allows to obtain some quick results, without precluding the future development, not only because of the economic situation but also because that might be the right way to engage all the EHR stakeholders, from patients to healthcare organizations.
+
+Throughout this dissertation study, an important knowledge of healthcare arena was gained. This knowledge is fundamental to be able to work in a complex context like this, where there are several stakeholders from completely different backgrounds, multiple institutions involved and many underlying interests. The research work was done on a weekly basis and in straight collaboration with the SPMS team. The existence of this cooperation allowed this work to be realistic. Moreover, it validates the dissertation work since that the people involved have many years of experience in the area and have a deep knowledge about the health information systems panorama and health organizations.
+
+\section{Contributions}
+
+The work done under this dissertation project comprehended several IT engineering areas. Indeed, the contribution was from the analyses of the business to understand the main requirements and problems, passing through the study of the information and application architecture, till the definition of a database model for the RCU2, with specific requisites to work over Oracle 7.3.1 databases.
+
+Due to the research done, it was possible to state the possibility of making some little adjustments in order to facilitate and enhance future developments. In fact, there was always a concern about designing the architecture the right way but also to provide paths to quick-wins. In this sense, the authors believe that the main platform created to allow the data sharing (PDS) should focus on allow that. That is, the PDS should clearly stablish its limits and scope and then offer a set of services to provide the clinical data sharing following some principles of the Metropolis Model. This way, the user interfaces would be implemented by the consumers of the data, either hospitals or independent software companies, for instance. The point is that each consumer would integrate the data the way it wants. In addition, the availability of certified and secure open services would instigate the stakeholders to develop under those services, removing the need for government's investment and increasing the quality by competition.
+
+Another conclusion is that there is an urgent need for normalisation. That is, the organizations must make an effort to normalise not only the codification standards but also the processes. However, the initiative and the example has to come from the higher instances under penalty of not being successful. On the other hand, in terms of standards, it is possible to say that the adoption of a standard to store and share clinical data will not solve all the problems but might be a pivotal step to solve several of them. Thereby, and following an evolutionary strategy, every interface or service thought to be available outside PDS, should be built with international standards, either for defining the services available (e.g. IHE profiles) as for encapsulate the data (e.g. HL7 CDA).
+
+Regarding PDS internal organisation, it is recommended to use a SOA approach in order to improve flexibility and reuse of the multiple components and services. In this case, the immediate use of standards should be applied to the new services.
+
+
+\section{Future}
+
+Despite of the effort that has already been spent and some positive results that have been achieved, there is still many changes to be done and many requirements to be met before Portugal can claim to have an EHR. Anyway, the path to reach it is too long and demands the existence of side projects that serve as guides and milestones of the global project.
+
+The implementation and availability of the RCU2 should be the priority in the near future because it has potential to have an enormous positive impact. The authors believe that only the realization of this project is already a giant step to help the professionals increase of the healthcare services quality.
 
 Apart from the conceptual and business challenges, the final purpose must guide all the future work: improving the patient healthcare services allowing the healthcare professionals to access relevant clinical information.
