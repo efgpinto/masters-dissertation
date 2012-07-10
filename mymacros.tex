@@ -15,11 +15,13 @@
 \newcommand{\myfigure}[2]{\mycustomfigure{#1}{#2}{width=0.86\textwidth}}
 
 % \mycustomfigure{file}{caption}{params}
-\newcommand{\mycustomfigure}[3]{\begin{figure}[t]
+\newcommand{\mycustomfigure}[3]{\mycustomcaptionfigure{#1}{#2}{#3}{#2}}
+
+\newcommand{\mycustomcaptionfigure}[4]{\begin{figure}[t]
   \begin{center}
     \leavevmode
     \includegraphics[#3]{#1}
-    \caption{#2}
+    \caption[#4]{#2}
     \label{fig:#1}
   \end{center}
 \end{figure}}

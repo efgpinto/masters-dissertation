@@ -4,15 +4,15 @@
 
 The objective of this section is to explain and state some suggestions about what is possible to do in the next two or three years, in order to achieve some kind of interoperability and sharing, with the aim of improving the healthcare services in Portugal. In this sense, the goal is not to predict the future about the health information systems or to propose intangible milestones but to point out some strategies that might help to create value in the mid-term future without precluding future requirements and evolutions.
 
-This chapter is meant to explain the progresses that were made since this dissertation work was initiated by February. However, there was a previous work of studying architectures and standards and also understanding the new government's strategy that was done since November. The work done in a close cooperation with the Portuguese Commission for Clinical Informatics in terms of researching and discussing the best options to take. It will start explaining the work methodology between all the team, advancing then into the explanation of what was found to be more or less relevant. Finally, we explain for each project what were the contributions and what might be done in the future to help the Portuguese EHR to grow healthy and robust.
+This chapter is meant to explain the progresses that were made since this dissertation work was initiated by February. However, there was a previous work of studying architectures and standards and also understanding the new government's strategy that was done since November. The work was done in a close cooperation with CIC in terms of researching and discussing the best options to take. It will start explaining the work methodology between all the team, advancing then into the explanation of what was found to be more or less relevant. Finally, we explain for each project what were the contributions and what might be done in the future to help the Portuguese EHR to grow healthy and robust. Along the different sections, the authors explain the developments made under this collaboration and also the vision proposed to the mid-term future.
 
 \section{Methodology}
 
-The methodology was based on a relation of great cooperation between the team and the entities responsible for implementing the PDS project, namely CIC, ACSS and SPMS. The meetings were in a weekly basis counting more than forty since November. The FEUP team's role was to support the design and implementation process, helping in the process of taking decisions, discussing the multiple options and bringing new solutions to the table.
+The methodology was based on a relation of great cooperation between the team and the responsible entities, namely CIC, ACSS and SPMS. The meetings were in a weekly basis counting more than forty since November. The FEUP team's role was to support the design and implementation process, helping in the process of taking decisions, discussing the multiple options and bringing new solutions to the table.
 
 \section{Strategic vision}
 
-The CIC opted by a strategy based on several projects and new processes running at the same time, instead of one with long study, research phases and long implementations schedules. This agile strategy led to the creation of 4 projects, which has different goals but are strong connected to the creation of an EHR:
+The CIC opted by a strategy based on several projects and new processes running at the same time, instead of one with long study, research phases and long implementations schedules. This agile strategy led to the creation of 4 projects, which has different goals but are strongly connected to the creation of an EHR:
 
 \begin{itemize}
 \item Personal Health Records -- website that is supposed to has the functionalities of a normal PHR, letting the patient to introduce clinical information and give consent for it to be accessed by healthcare professionals. The Patient Portal already existed but was added to it a new module called \textit{\textbf{As minhas notas}}; 
@@ -85,6 +85,8 @@ It will be necessary to understand which systems are fundamental to the business
 
 \section{The Portuguese Personal Health Record}
 
+As described at Section~\ref{sec:phr} the PHR system may be an important component to the successful implementation of an EHR. In the section, the goal is to state the recent developments made under this assumption but also to understand which are the next steps that need to be taken.
+
 \subsection{Recent developments}
 
 It is important to notice the introduction of the Patient Portal that centralizes all the patients' information across the country, in the same system.
@@ -94,7 +96,10 @@ To the existing Patient Portal was added a new section called "My Notes". This s
 The system also allows the individual to give or withdraw the consent to share the information among the public healthcare institutions.
 
 \subsection{Future vision}
-This is the kind of system that can be built almost standalone. In fact, it was developed as a new peace of software, despite of the integration with the RNU login services. Actually, in addition to storing personal information and allowing the consent managing, it also allows the patient to access the professionals list who saw his/her notes.
+
+\mycustomcaptionfigure{PHR_architecture}{Overview of the Portuguese PHR system which was integrated with \textit{Portal do Utente}. The system might stand alone as an repository providing some essential services as described in the figure.}{width=0.8\textwidth}{Overview of the Portuguese PHR system}
+
+This is the kind of system that can be built almost standalone (see Fig.~\ref{fig:PHR_architecture}). In fact, it was developed as a new peace of software, despite of the integration with the RNU login services. Actually, in addition to storing personal information and allowing the consent managing, it also allows the patient to access the professionals list who saw his/her notes.
 
 Despite of having some interesting features already, the system still has a large margin to evolve. One of the features that should be improved is the patient consent. The actual consent only has to options:
 \begin{enumerate}
@@ -115,9 +120,9 @@ In terms of information and new functionalities, there are several examples of w
 Last but not least, the information does not worth anything unless it can be shared and access by the professionals. In that sense, if the collected data is not saved in an appropriate format there will be necessary too much effort to share it. So, it is fundamental to use a standard to store the information as well as to implement the interfaces and services that will allow that exchange.
 
 
-%TODO inserir esquema do PPHR
-
 \section{The Portuguese Patient Summary}
+
+The Patient Summary (see Sec.~\ref{sec:pat_sum}) stands as an essential concept of an EHR. In the next few sections, the authors describe the main developments recently done but also the work that is still to be done in order to improve the service quality.
 
 \subsection{Recent developments}
 
@@ -225,6 +230,10 @@ In this sense, it was defined that would be the family doctor to manage the RCU2
 
 \subsection{Future Vision}
 
+The recommendations presented in the next subsections are centred in three fundamental questions: the location of the data; the codification of the data and the process that allows the data to be uploaded from the local institutions to the repository above. A summary of the architecture can be found at Figure~\ref{fig:RCU2_architecture}.
+
+\mycustomcaptionfigure{RCU2_architecture}{A summary of the future vision for the RCU2. This project will be interconnect with two kind of institutions: hospitals and CSP. Also, it will be constituted by the referred main components with well-defined services to retrieve data.}{width=0.8\textwidth}{A summary of the future vision for the RCU2}
+
 \subsubsection{The repository}
 
 Regarding the RCU2, the natural tendency is to group the several institutions by regions and trying to have as few instances as possible. This policy of centralization has great advantages in terms of ease of troubleshooting, improvements, maintenance, etc. 
@@ -247,6 +256,8 @@ The situation of the CSP unit is quite different. In this case, it will be neces
 
 \section{The epSOS integration}
 
+The goal of this section is to describe the work realised under the epSOS integration process.
+
 \subsection{Recent developments}
 
 As described in Section~\ref{sec:epsos}, the epSOS project is based on two essential services (Patient Summary and ePrescription) but Portugal was integrated only with the PS sharing commitment. Since the epSOS integration is very dependent on the evolution of the other projects, particularly on the RCU2, there was no significant developments on it. Despite of the Portuguese NCP implementation process is at the responsibility of an external company, there was a close work between the company and the SPMS, in which the authors also have participated. The results of that close collaboration are described in the next section, helping to define the future vision.
@@ -265,23 +276,27 @@ The epSOS project may become an important catalyst to the introduction of standa
 If we will be sending the RCU2 codified with HL7 CDA, it may be interesting to start sharing it the same way internally. In order to achieve that, it will be necessary to bring the National Connector (see Section~\ref{sec:epsos_ni}) into the scope of PDS instead of staying as a service created only to epSOS. The next components seems to be fundamental:
 \begin{itemize}
 \item locate the National Connector, which could have the responsibility to transcode from RCU2 to HL7 CDA, within the PDS scope;
-\item define the services using the standards (e.g. IHE profiles); %TODO (see Section~\ref{sec:ihe});
+\item define the services using the standards (e.g. IHE profiles, see Section~\ref{sec:ihe}).
 \end{itemize}
 
 This way, it will be possible to share the standardized RCU2 not only to other countries but to several institutions, namely the private ones. Another important note is the existing dependency between this case and the \textit{Portal do Utente} in order to confirm the patient consents.
 
+\mycustomcaptionfigure{epSOS_architecture}{General view of the epSOS components. The components represented are only the ones that directly interact with the creation and dispatch of the PS}{width=0.6\textwidth}{General view of the epSOS components only with respect to the PS providing}
+
 \subsubsection{Case B}
 
-In order to access the clinical information of a foreign patient, the CIC decided to create a new project called \textit{Portal Internacional}\footnote{International Portal}. This website would allow every authenticated and authorized professional to access some PS in a Portuguese healthcare institution event context. However, there is a really big problem: the absence of a Nation Healthcare Professional Record and consequently of an Authentication Provider, which the authors explore more in detail at Section~\ref{sec:hpip}.
-
-
+In order to access the clinical information of a foreign patient, the CIC decided to create a new project called \textit{Portal Internacional}\footnote{International Portal}. This website would allow every authenticated and authorized professional to access some PS in a Portuguese healthcare institution event context. However, there is a really big problem: the absence of a Nation Healthcare Professional Record and consequently of an Authentication Provider, which the authors explore more in detail at Section~\ref{sec:hpip}. A general view of the components is presented at Figure~\ref{fig:epSOS_architecture}.
 
 
 
 
 \section{The Portuguese Electronic Health Record}
 
+The next subsections are intended to describe the way all the projects are supposed to be connected and to share clinical data. The section starts with the recent developments and then presents the vision that the authors built from the research done in the last months.
+
 \subsection{Recent Developments}
+
+Through the last months, some developments were done in order to integrate the several data and systems existing. This section aims to state the work done and the problems that were raised.
 
 \subsubsection{The Professional Portal}
 The Professional Portal aims to be the gate through which the doctors will be able to access the clinical information about a patient. In this system, it is intended to gather the information coming from the Patient Portal (introduced by the referenced patient) but also the information stored at other institutions like primary healthcare institutions and hospitals. In this sense, it was necessary to think how it would be possible to integrate the data from two different sources:
@@ -315,7 +330,7 @@ A previous study~\citep{Carvalho2011a} advocates the match between the Metropoli
 
 \subsubsection{Definition of kernel's scope}
 
-The Portuguese EHR project was renamed to \textit{PDS - Plataforma de Dados da Saúde} (Healthcare Data Platform). The recent developments under the sign of PDS has led to the releasing of two systems: the Patient Portal - My Notes and the Professional Portal. However, these two systems were developed almost as independent systems, with their own user interfaces, architecture, technologies and even implemented by different institutions (as represented at Fig. \ref{fig:evolution-phase1}).
+The Portuguese EHR project was renamed to \textit{Plataforma de Dados da Saúde}\footnote{Healthcare Data Platform} (PDS). The recent developments under the sign of PDS has led to the releasing of two systems: the Patient Portal - My Notes and the Professional Portal. However, these two systems were developed almost as independent systems, with their own user interfaces, architecture, technologies and even implemented by different institutions (as represented at Fig. \ref{fig:evolution-phase1}).
 
 \mycustomfigure{evolution-phase1}{The actual situation with the two portals}{width=10cm}
 
@@ -356,7 +371,7 @@ There are some PDS components that are easily identified as potential services, 
 In the Section \ref{sec:eda} we have shortly described the Event-oriented Architectures and obviously, it was on purpose. The healthcare reality is a area characterized by several events, an emergency situation, a surgery, a complementary exam, etc. In fact, each episode is an event that has information attached and that is relevant to someone, either a patient, a doctor or even an institution. In this sense, it is important to understand how is it possible to fit this model in a very complex context. In terms of medium-term vision, the situations triggered as events are:
 \begin{itemize}
 \item the family doctor needs to get warned about new information of its patients, to include in the RCU2;
-\item some national institutions (e.g. Instituto Nacional de Estatística\footnote{Statistical National Institute} (INE) or Direção-Geral de Saúde\footnote{Overall Direction of Health} (DGS)) are interested in receiving information.
+\item some national institutions (e.g. \textit{Instituto Nacional de Estatística}\footnote{Statistical National Institute} (INE) or \textit{Direção-Geral de Saúde}\footnote{Overall Direction of Health} (DGS)) are interested in receiving information.
 \end{itemize}
 
 \mycustomfigure{pds-eda}{The application of an EDA in the context of PDS}{scale=0.75}
@@ -393,7 +408,7 @@ The urgency for this record is recognized amongst the professionals working in t
 
 \section{Architecture Overview}
 
-The overview is constituted by four essential modules. The entity (CIC) responsible for planning this change process defined the following projects:
+The overview is constituted by four essential modules. The entity responsible (CIC) for planning this change process defined the following projects:
 \begin{itemize}
 \item \textit{Portal do Utente (as minhas notas)} -- the Portuguese PHR;
 \item \textit{Resumo Clínico Único do Utente} -- the Portuguese Patient Summary;
@@ -401,7 +416,7 @@ The overview is constituted by four essential modules. The entity (CIC) responsi
 \item \textit{Portal do Profissional} -- the portal where the professionals access the patient clinical data.
 \end{itemize}
 
-All these projects are supposed to be interconnected by a platform created with that goal and named \textit{Pla\-ta\-for\-ma de Dados de Saúde}. The future vision, represented by the Figure~\ref{fig:general-architecture} is based on limiting the scope of PDS to the minimum, removing all the user interfaces clients from its scope. To do this, it is necessary to implement services and interface that those client interface can use to present the information. This way, it is possible in future to open that services to other stakeholders, letting them construct alternatives to the official clients nd new ways of using that information. These future ``investors'' may be companies that build software to the healthcare arena as well as private healthcare institutions.
+All these projects are supposed to be interconnected by a platform created with that goal and named \textit{Pla\-ta\-for\-ma de Dados de Saúde} (PDS). The future vision, represented by the Figure~\ref{fig:general_architecture} is based on limiting the scope of PDS to the minimum, removing all the user interfaces clients from its scope. To do this, it is necessary to implement services that those clients interface can use to present the information. This way, it is possible in future to open that services to other stakeholders, letting them construct alternatives to the official clients and new ways of using that information. These future ``investors'' may be companies that build software to the healthcare arena as well as private healthcare institutions.
 
 
 The obvious response to the problem of exchanging clinical information is using well-known standards. Although, in the chaotic context of several systems and applications not talking with each other that is not a reasonable answer. So, having this scenario into account it is possible to point out these guidelines:

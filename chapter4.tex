@@ -32,7 +32,7 @@ In England, several articles~\citep{Anderson2010, Coiera2011, Greenhalgh2010} ha
 
 The Scottish case appears to gather more consensus and positive feedback. A study of Gartner Industry Research stated~\citep{Research2007} that the Emergency Care Summary (ECS), how it is called in Scotland, is a success because it met a specific business need. Also, it advocates that the clinician buy-in was achieved by involving the clinicians in the definition of ECS data and designing the security and access protocol for it as well as there was ``training out-of-hours staff to use ECS appropriately'' which was identified as a critical factor too. Another study~\citep{Jones2008} on the ECS reported an estimated volume of 5.1 million patient records created from the general practitioner practices and 1.3 million of accesses to them, in 2008.
 
-\section{Personal Health Record}
+\section{Personal Health Record}\label{sec:phr}
 
 A Personal Health Record is a system whereby individuals can ``access, manage and share their health information, and that of others for whom they are authorized, in a private, secure, and confidential environment''~\citep{Health2003}. As it is reported by some articles~\citep{Tang2006,Tang2009}, the approach of the system might differ from being a totally isolated one till being integrated with the national healthcare system. Also, there is a lot of studies~\cite{Tang2009,Pagliari2007,Detmer2008, Fricton2008} about the benefits that those systems can bring:
 \begin{itemize}
@@ -88,6 +88,14 @@ In terms of security, epSOS states some basic non-functional security requiremen
 \end{itemize}
 
 \subsection{Identification and Authentication}
+
+The epSOS directives define three essential identification services:
+\begin{itemize}
+\item Service Entry Point Discovery --- the discovery point returns single entry point for a NCP of a country;
+\item Patient Identification (and Authentication) --- is realized through the IHE XCPD Integration Profile;
+\item Health Professional Authentication and Authorisation --- is authenticated in the health professional's home country and have to generate an OASIS XACML (eXtensible Access Control Markup Language) file to declare it.
+\end{itemize}
+
 \subsection{Semantic Issues}
 epSOS is obviously an huge and complex project, presenting several challenges to manage and resolve. We know that each country has its own policy, classification tables, ontologies and so on. So, one of the most interesting challenges is how to handle this diversity, finding a common language which enables the communication and transcription of several local classifications and taxonomies, not to mention the country language itself. In order to address this problem, epSOS defines a set of semantic services which we describe next. 
 
@@ -150,10 +158,10 @@ Before talking about where should we go, we must know the starting point. This s
 \subsection{Organic Structure Summary}
 %\section{Country Healthcare Organization}
 
-The Portuguese National Health Service is called \textit{Serviço Nacional de Saúde} (SNS) and supervises all the public healthcare services in the country~\citep{SAUDE2011}. The institutions that constitute the SNS are every services or public healthcare providers, including:
+The Portuguese National Health Service is called \textit{Serviço Nacional de Saúde}\footnote{National Health Service} (SNS) and supervises all the public healthcare services in the country~\citep{SAUDE2011}. The institutions that constitute the SNS are every services or public healthcare providers, including:
 \begin{itemize}
-\item \textit{Agrupamentos de Centros de Saúde} (ACS) -- these healthcare primary institutions groups are public health services with administrative autonomy, consisting of several functional units that combine one or more health units and whose mission is to ensure the provision of primary health care to the population of a given geographical area;
-\item \textit{Unidades Locais de Saúde} (ULS) -- the health local units consisting of hospitals and health units, allow integration into a single public entity business, the various agencies and institutions of the SNS in a given municipality, providing health care to the population;
+\item \textit{Agrupamentos de Centros de Saúde}\footnote{Health Centres Groups} (ACES) -- these healthcare primary institutions groups are public health services with administrative autonomy, consisting of several functional units that combine one or more health units and whose mission is to ensure the provision of primary health care to the population of a given geographical area;
+\item \textit{Unidades Locais de Saúde}\footnote{Health Local Units} (ULS) -- the health local units consisting of hospitals and health units, allow integration into a single public entity business, the various agencies and institutions of the SNS in a given municipality, providing health care to the population;
 \item \textit{Hospitals}.
 \end{itemize}
 
@@ -161,9 +169,9 @@ Moreover, the country is divided in five regions and exists one regional adminis
 
 To the scope of this dissertation, is also interesting to present three entities inside the Ministry of Health:
 \begin{itemize}
-\item \textit{Administração Central do Sistema de Saúde, I.P.} (ACSS) -- the Central Administration of the Health System has the task of ensuring the financial management and human resources of the Ministry of Health and the SNS, and the facilities and equipment fostering the development and implementation, standardization, regulation and planning health policies~\citep{SAUDE2011};
-\item \textit{Serviços Partilhados do Ministério da Saude, E.P.E.} (SPMS) -- the Shared Services of Ministry of Health has the mission of provide shared services in the areas of purchasing and logistics, financial services, human resources and systems and information and communication technologies in order to ``centralize, streamline and rationalize'' procurement of goods and services in the SNS~\citep{Saude2010a};
-\item \textit{Comissão para a Informatização Clínica (CIC)} -- the Portuguese Committee for Clinical Informatics was created with the goal that the clinical information, sparsely produced and stored, is available to the user and health professional who provides any service, regardless of the time and place of deliver~\citep{Saude2011a}.
+\item \textit{Administração Central do Sistema de Saúde, I.P.}\footnote{Central Administration of the Health System} (ACSS) -- has the task of ensuring the financial management and human resources of the Ministry of Health and the SNS, and the facilities and equipment fostering the development and implementation, standardization, regulation and planning health policies~\citep{SAUDE2011};
+\item \textit{Serviços Partilhados do Ministério da Saude, E.P.E.}\footnote{Shared Services of Ministry of Health} (SPMS) -- has the mission of provide shared services in the areas of purchasing and logistics, financial services, human resources and systems and information and communication technologies in order to ``centralize, streamline and rationalize'' procurement of goods and services in the SNS~\citep{Saude2010a};
+\item \textit{Comissão para a Informatização Clínica}\footnote{Committee for Clinical Informatics} (CIC) -- was created with the goal that the clinical information, sparsely produced and stored, is available to the user and health professional who provides any service, regardless of the time and place of deliver~\citep{Saude2011a}.
 \end{itemize}
 
 
@@ -178,7 +186,7 @@ In order to facilitate this characterization, we will divide the description in 
 
 \subsubsection{Primary Healthcare Data}
 
-This kind of data is gathered among the primary healthcare institutions (Cuidados de Saúde Primários - CSP). The WHO defines the primary healthcare with five essential goals: ``reducing exclusion and social disparities'', ``organizing health services around people's needs and expectations'', ``integrating health into all sectors'', ``pursuing collaborative models of policy dialogue'' and ``increasing stakeholder participation''. In this sense, the information collected and managed at this level are:
+This kind of data is gathered among the \textit{Cuidados de Saúde Primários}\footnote{Primary Healthcare Institutions} (CSP) institutions. The WHO defines the primary healthcare with five essential goals: ``reducing exclusion and social disparities'', ``organizing health services around people's needs and expectations'', ``integrating health into all sectors'', ``pursuing collaborative models of policy dialogue'' and ``increasing stakeholder participation''. In this sense, the information collected and managed at this level are:
 \begin{itemize}
 \item Allergies and intolerances;
 \item Vaccinations;
@@ -204,7 +212,7 @@ The ambulatory healthcare data is produced at the hospitals and contains data ab
 \item Eventually some information about the social historic of the patient.
 \end{itemize}
 
-All the public hospitals use a system called Grupos de Diagnósticos Homogéneos (GDH), which are the translation of the  Diagnosis Related Groups (DRG). The GDH is a classification system for hospitalized patients that defines coherent patient groups with a similar estimated cost. Through this system it is possible to state the set of goods and services that each patient receives having in count his needs and the pathology that brought him in. The GDH are used to calculate the financing level that a hospital receives~\citep{GDH2011}.
+All the public hospitals use a system called \textit{Grupos de Diagnósticos Homogéneos} (GDH), which are the translation of the  Diagnosis Related Groups (DRG). The GDH is a classification system for hospitalized patients that defines coherent patient groups with a similar estimated cost. Through this system it is possible to state the set of goods and services that each patient receives having in count his needs and the pathology that brought him in. The GDH are used to calculate the financing level that a hospital receives~\citep{GDH2011}.
 
 Moreover, the information is not directly collected or transformed in GDHs. In first place, the information is stored at the local information systems or, in some cases, in paper~\citep{Ferreira2008}. Later, some specialized doctors transform the existing data into the GDH format so the hospital will be able to receive the state's support. Nowadays, the hospitals introduces the GDHs in a national central system called WebGDH. The information dispatch only occurs at the end of each month. The hospital diagnosis and procedures discharge letters are coded using the ICD-9-CM (see Section \ref{sec:icd}).
 
@@ -217,7 +225,7 @@ In this section, it is pretended to characterise the main applications in the pu
 
 \subsubsection{SONHO}
 
-The SONHO (Sistema Integrado de Informação Hospitalar\footnote{Integrated System for Hospital Information}) is an information system for patient management created in 1988 and disseminated by the Portuguese hospitals, with no competitors at that time~\citep{Teixeira2005}. Nowadays, SONHO is the dominant system in Portuguese hospitals' being installed in about 90\% of the Portuguese public hospitals. SONHO has as the main objective to control the flow of patients in the hospital, that mean to know who is in and who leaves, and what resources were spend with which patient, aiming to ensure some standardization of statistical data and billing. This system started with three modules: outpatient, inpatient and emergency but some new modules were added, like surgery operation room and day care modules~\citep{Cruz-correia}. The user interface is represented in Figure~\ref{fig:SONHO_ecra1}.
+\textit{Sistema Integrado de Informação Hospitalar}\footnote{Integrated System for Hospital Information} (SONHO) is an information system for patient management created in 1988 and disseminated by the Portuguese hospitals, with no competitors at that time~\citep{Teixeira2005}. Nowadays, SONHO is the dominant system in Portuguese hospitals' being installed in about 90\% of the Portuguese public hospitals. SONHO has as the main objective to control the flow of patients in the hospital, that mean to know who is in and who leaves, and what resources were spend with which patient, aiming to ensure some standardization of statistical data and billing. This system started with three modules: outpatient, inpatient and emergency but some new modules were added, like surgery operation room and day care modules~\citep{Cruz-correia}. The user interface is represented in Figure~\ref{fig:SONHO_ecra1}.
 
 This application allows the registration of clinical data (e.g. history of an inpatient encounter, emergency summary report, referral letters, diagnosis and procedures), allowing the establishment of a bridge between the clinical data and the production of the DGHs with billing purposes~\citep{GDHSONHO2011}.
 
@@ -227,14 +235,14 @@ This application allows the registration of clinical data (e.g. history of an in
 
 \subsubsection{SINUS}
 
-The SINUS (Sistema de Informação de Unidades de Saúde\footnote{Information System for Health Institutions}) was created with the same intents of SONHO but for the primary healthcare institution contexts. The SINUS is widely disseminated over Portugal, being present in 3 hospitals and 72 primary health care institutions. Currently, SINUS is still supporting the healthcare unit management, mainly in terms of medical consultation scheduling and vaccination. Furthermore, until that functionalities are replaced, the system must keep operational, although the recommended abandonment of the module ``Managing Users''~\citep{Saude2010}.
+\textit{Sistema de Informação de Unidades de Saúde}\footnote{Information System for Health Institutions} (SINUS) was created with the same intents of SONHO but for the primary healthcare institution contexts. The SINUS is widely disseminated over Portugal, being present in 3 hospitals and 72 primary health care institutions. Currently, SINUS is still supporting the healthcare unit management, mainly in terms of medical consultation scheduling and vaccination. Furthermore, until that functionalities are replaced, the system must keep operational, although the recommended abandonment of the module ``Managing Users''~\citep{Saude2010}.
 
 
 \subsubsection{SAM}
 
 %TODO inserir percentagem de uilização
 
-In 1999, the Ministry of Health decides to start developing a new system called SAM (Sistema de Apoio ao Médico\footnote{Doctor Support System}). The SAM was born as a web software layer, supported upon the SONHO and SINUS systems, aiming to serve as a platform where doctors could introduce information in SINUS and SONHO at the same time. SAM was designing with two essential guide lines~\citep{Castanheira2005, ACSS_SAM2010}:
+In 1999, the Ministry of Health decides to start developing a new system called \textit{Sistema de Apoio ao Médico}\footnote{Doctor Support System} (SAM). The SAM was born as a web software layer, supported upon the SONHO and SINUS systems, aiming to serve as a platform where doctors could introduce information in SINUS and SONHO at the same time. SAM was designing with two essential guide lines~\citep{Castanheira2005, ACSS_SAM2010}:
 \begin{itemize}
 \item Provide some basic functionalities to the doctor daily activities and related with the data stored at SINUS and SONHO, like scheduling management, reports, few clinical data records, etc.
 \item Enable the implementation of some processes which interfere with the doctor activity.
@@ -242,9 +250,9 @@ In 1999, the Ministry of Health decides to start developing a new system called 
 
 
 \subsubsection{SAPE}
-The SAPE (Sistema de Apoio à Prática de Enfermagem\footnote{Nursing Practice Support System})~\citep{ACSS_SAPE2010} is a software directed to the nursing professionals, that allows the scheduling and recording of the healthcare activities at the health institutions. SAPE was built to address the nurse daily activities, trying to organize and facilitate the information consume. On the other hand, it was also created with the objective of normalizing the nursing records system. The collected data results from the nursing healthcare at the institutions where the system is implemented.
+\textit{Sistema de Apoio à Prática de Enfermagem}\footnote{Nursing Practice Support System} (SAPE) is a software~\citep{ACSS_SAPE2010} directed to the nursing professionals, that allows the scheduling and recording of the healthcare activities at the health institutions. SAPE was built to address the nurse daily activities, trying to organize and facilitate the information consume. On the other hand, it was also created with the objective of normalizing the nursing records system. The collected data results from the nursing healthcare at the institutions where the system is implemented.
 
-This system uses the CIPE (Classificação Internacional para a Prática de Enfermagem - version BETA 2\footnote{ICNP - International Classification for Nursing Practice of International Council of Nurses}) as a language reference. The Figure~\ref{fig:SAPE_ecra} presents the user interface of this system.
+This system uses the \textit{Classificação Internacional para a Prática de Enfermagem}\footnote{ICNP - International Classification for Nursing Practice of International Council of Nurses} (CIPE) as a language reference. The Figure~\ref{fig:SAPE_ecra} presents the user interface of this system.
 
 \mycustomfigure{SAPE_ecra}{User interface of SAPE}{width=0.7\textwidth}
 
